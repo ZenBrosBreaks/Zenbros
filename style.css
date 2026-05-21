@@ -982,7 +982,7 @@ html.zen-joined .promo { display: none; }
 }
 .promo.is-dismissing {
   opacity: 0;
-  max-height: 0;
+  max-height: 0 !important;   /* beats the inline max-height JS sets to anchor the start of the transition */
   overflow: hidden;
   padding-top: 0; padding-bottom: 0;
   border-bottom-color: transparent;

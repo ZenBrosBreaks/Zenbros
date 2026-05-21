@@ -201,8 +201,16 @@
 
     function dismissBanner() {
       if (!promo) return;
+      // Lock in the current height as the transition start, otherwise the
+      // max-height collapse jumps (no animatable starting value).
+      var h = promo.getBoundingClientRect().height;
+      promo.style.maxHeight = h + 'px';
+      // Force a reflow so the explicit start value is committed before the
+      // class toggle triggers the transition to 0.
+      // eslint-disable-next-line no-unused-expressions
+      promo.offsetHeight;
       promo.classList.add('is-dismissing');
-      setTimeout(function () { promo.style.display = 'none'; }, 480);
+      setTimeout(function () { promo.style.display = 'none'; }, 520);
     }
 
     // X close — manually dismiss without signing up
@@ -227,8 +235,8 @@
         try { localStorage.setItem(STORE, '1'); } catch (e) {}
         form.hidden = true;
         if (done) done.hidden = false;
-        // Show "Sent" briefly, then fade the whole banner away.
-        setTimeout(dismissBanner, 2200);
+        // Show "Sent" long enough to be read, then fade the whole banner away.
+        setTimeout(dismissBanner, 3200);
       }
       function fail() {
         if (btn) { btn.disabled = false; btn.textContent = 'Get my code'; }
