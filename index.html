@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zen Bros Breaks</title>
+  <meta name="description" content="Pre-purchase YouTube break spots. F1, Hockey, NBA and more." />
+
+  <meta property="og:title" content="Zen Bros Breaks" />
+  <meta property="og:description" content="Pre-purchase YouTube break spots." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-image.png" />
+  <meta property="og:url" content="https://www.zenbrosbreaks.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0d0e10" />
+
+  <link rel="canonical" href="https://www.zenbrosbreaks.com" />
+  <link rel="icon" type="image/png" href="images/logo-sm.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://sdks.shopifycdn.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>try{if(localStorage.getItem('zenbros:joined'))document.documentElement.classList.add('zen-joined');}catch(e){}</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- ============================================================
+     PROMO BANNER — first-order discount, email signup
+     ============================================================ -->
+<aside class="promo" aria-label="First-order discount">
+  <div class="wrap promo-row">
+    <p class="promo-text"><strong>10% off your first break.</strong> Join the list &mdash; we&rsquo;ll email your code.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="promo-form" id="joinForm">
+      <input type="hidden" name="form-name" value="newsletter" />
+      <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+      <input type="email" name="email" id="joinEmail" required placeholder="you@email.com" aria-label="Email address" autocomplete="email" />
+      <button type="submit" class="promo-btn" id="joinBtn">Get my code</button>
+    </form>
+    <p class="promo-done" id="joinDone" role="status" aria-live="polite" hidden>&check; Sent &mdash; check your inbox.</p>
+  </div>
+  <button type="button" class="promo-close" id="joinClose" aria-label="Dismiss">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</aside>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand" aria-label="Zen Bros Breaks home">
+      <img src="images/logo-sm.png" alt="" width="60" height="60" />
+      <span class="brand-text"><em>Zen Bros</em><small>Breaks</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" class="active">Breaks</a>
+      <a href="lending.html">Lending</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="about.html">About</a>
+      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="nav-link-live">
+        <span class="dot"></span> Live
+      </a>
+    </nav>
+
+    <div class="nav-right">
+      <button id="navCart" class="nav-cart" type="button" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span id="cartCount" class="cart-count" hidden>0</span>
+      </button>
+      <button id="ham" class="ham" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     MOBILE DRAWER (used on all viewport sizes; nav stays minimal)
+     ============================================================ -->
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <header class="drawer-head">
+    <a href="index.html" class="drawer-brand" aria-label="Zen Bros Breaks home">
+      <img src="images/logo-sm.png" alt="" width="36" height="36" />
+      <span class="drawer-brand-text"><em>Zen Bros</em><small>Breaks</small></span>
+    </a>
+    <button id="drawerClose" class="drawer-close" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="drawer-nav" aria-label="Menu">
+    <a href="index.html" class="active">
+      <span class="drawer-label">Breaks</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
+    </a>
+    <a href="lending.html">
+      <span class="drawer-label">Lending</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
+    </a>
+    <a href="shipping.html">
+      <span class="drawer-label">Shipping</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
+    </a>
+    <a href="about.html">
+      <span class="drawer-label">About</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
+    </a>
+    <button id="drawerCart" class="drawer-link" type="button">
+      <span class="drawer-label">Cart</span>
+      <span id="drawerCartCount" class="drawer-arrow drawer-cart-count" aria-hidden="true">→</span>
+    </button>
+  </nav>
+
+  <div class="drawer-cta-wrap">
+    <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="drawer-cta">
+      <span class="dot"></span>
+      Watch Live on Whatnot
+    </a>
+  </div>
+
+  <footer class="drawer-foot">
+    <span class="drawer-foot-label">Channels</span>
+    <div class="drawer-socials">
+      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" aria-label="Whatnot">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Zm-1.5-11.5v7l6-3.5Z"/></svg>
+        <span>Whatnot</span>
+      </a>
+      <a href="https://www.youtube.com/@ZenBrosBreaks" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="https://www.instagram.com/zenbrosbreaks/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </footer>
+</aside>
+
+<!-- One unified scrim — drives both drawer & cart visibility -->
+<div id="scrim" class="scrim" aria-hidden="true"></div>
+
+<!-- ============================================================
+     MAIN — Breaks grid
+     ============================================================ -->
+<main id="main" class="main">
+  <div class="wrap">
+
+    <div class="filter-row" role="region" aria-label="Filter breaks">
+      <div class="filters" role="tablist" aria-label="Sport filters">
+        <button type="button" class="chip active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="f1">F1</button>
+        <button type="button" class="chip" data-filter="nba">NBA</button>
+        <button type="button" class="chip" data-filter="stranger-things">Stranger Things</button>
+      </div>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search breaks…" aria-label="Search breaks" autocomplete="off" />
+      </div>
+    </div>
+
+    <p class="filter-empty" id="filterEmpty" hidden>No breaks match that filter.</p>
+
+    <div class="grid">
+
+      <!-- ============================================================
+           BREAK · F1
+           To edit: change card-date, .price, and Shopify product ID.
+           ============================================================ -->
+      <article class="card" data-cat="f1">
+        <div class="card-art art-image">
+          <img src="images/f1-3box.png" alt="2025 Topps Chrome F1 3 Box Hobby Break" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">F1</span>
+          <h3>25/26 Topps Chrome F1</h3>
+          <span class="card-date" data-datetime="2026-05-29T17:00:00-07:00">FRI · MAY 29 · 5:00 PM PT</span>
+          <p class="card-desc">3-Box Hobby · Randomized</p>
+          <span class="spots" data-product-spots="8409310363835" data-spots-max="12">12 spots remaining</span>
+
+          <details class="card-details">
+            <summary>How it works &amp; spot board <span class="chev" aria-hidden="true"></span></summary>
+            <div class="card-details-body">
+              <p>There are <strong>12 total spots</strong> in this 3x F1 Hobby break. We will go live on YouTube at the specified date/time. After all spots sell, we will randomize the spot list live on YouTube before the rip. Whatever spot you land, you get all cards pulled from the boxes for that spot.</p>
+              <p><em>Example:</em> If you land Mercedes, you get all Kimi Antonelli, George Russell, and Mercedes Logos cards pulled. If you land a combo / team / bucket spot, you get all cards that fall under that full spot.</p>
+              <p class="spot-board-label">Spot Board · 12 Team Spots</p>
+              <ul class="spot-board grouped">
+                <li>
+                  <div class="spot-head"><span class="spot-num">01</span><strong>Mercedes</strong></div>
+                  <p class="spot-items">Kimi Antonelli · George Russell · Mercedes Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">02</span><strong>Ferrari</strong></div>
+                  <p class="spot-items">Lewis Hamilton · Charles Leclerc · Ferrari Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">03</span><strong>Red Bull</strong></div>
+                  <p class="spot-items">Max Verstappen · Isack Hadjar · Arvid Lindblad · Red Bull Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">04</span><strong>McLaren</strong></div>
+                  <p class="spot-items">Lando Norris · Oscar Piastri · McLaren Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">05</span><strong>Williams</strong></div>
+                  <p class="spot-items">Carlos Sainz · Alex Albon · Franco Colapinto · Williams Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">06</span><strong>Aston Martin</strong></div>
+                  <p class="spot-items">Fernando Alonso · Lance Stroll · Aston Martin Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">07</span><strong>VCARB</strong></div>
+                  <p class="spot-items">Yuki Tsunoda · Liam Lawson · VCARB Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">08</span><strong>Alpine</strong></div>
+                  <p class="spot-items">Esteban Ocon · Pierre Gasly · Alpine Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">09</span><strong>Stake</strong></div>
+                  <p class="spot-items">Gabriel Bortoleto · Nico Hülkenberg · Ricciardo &amp; Zhou · Stake Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">10</span><strong>Haas</strong></div>
+                  <p class="spot-items">Oliver Bearman · Haas Logos</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">11</span><strong>Legends + Circuit Cards</strong></div>
+                  <p class="spot-items">Ayrton Senna · Michael Schumacher · Kimi Räikkönen · Mika Häkkinen · Mario Andretti · All Other Legends · Circuit Cards</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">12</span><strong>F2 / F3 Prospects</strong></div>
+                  <p class="spot-items">Alexander Dunne · Dino Beganovic · Leonardo Fornaroli · Rafael Camara · Jak Crawford · Luke Browning · Mari Boya · Ugo Ugochukwu · All Other F2 · All Other F3</p>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="card-foot">
+            <span class="price">$149.99</span>
+            <div class="shopify-slot" data-shopify-product="8409310363835"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           BREAK · STRANGER THINGS
+           ============================================================ -->
+      <article class="card" data-cat="stranger-things">
+        <div class="card-art art-image">
+          <img src="images/stranger-things.png" alt="Stranger Things 3 Box Hobby Break" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Stranger Things</span>
+          <h3>Stranger Things — 3-Box Hobby</h3>
+          <span class="card-date" data-datetime="2026-05-29T17:00:00-07:00">FRI · MAY 29 · 5:00 PM PT</span>
+          <p class="card-desc">Topps Hobby · Randomized</p>
+          <span class="spots" data-product-spots="8417932083387" data-spots-max="10">10 spots remaining</span>
+
+          <details class="card-details">
+            <summary>How it works &amp; spot board <span class="chev" aria-hidden="true"></span></summary>
+            <div class="card-details-body">
+              <p>There are <strong>10 total spots</strong> in this 3x Stranger Things Hobby box break. After all spots sell, we will randomize the spot list live before the rip. Whatever spot you land, you get all cards pulled from the boxes for every character, episode, creature, or theme listed in that spot.</p>
+              <p><em>Example:</em> If you land the Eddie + Hellfire Club spot, you get all Eddie cards, all Hellfire Club cards, and every other card listed under that full spot.</p>
+              <p>All cards ship.</p>
+              <p class="spot-board-label">Spot Board · 10 Spots</p>
+              <p class="spot-board-note">Each numbered spot below is one bundle. Land a spot and you get every character, episode, creature, and theme listed in it.</p>
+              <ul class="spot-board grouped">
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>01</strong></div>
+                  <p class="spot-items">Eleven · The Nina Project · The Monster and the Superhero · Papa</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>02</strong></div>
+                  <p class="spot-items">Vecna · Vecna&rsquo;s Curse · The Massacre at Hawkins Lab · Henry Creel</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>03</strong></div>
+                  <p class="spot-items">Eddie · The Hellfire Club · Chrissy · Dear Billy</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>04</strong></div>
+                  <p class="spot-items">Steve · Robin · Nancy · The Dive · The Mall Rats</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>05</strong></div>
+                  <p class="spot-items">Dustin · Suzie, Do You Copy · Dig Dug / The Spy · The Flea and the Acrobat / The Bathtub</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>06</strong></div>
+                  <p class="spot-items">Hopper · Dr. Brenner · Dr. Kay · The Body · The Gate</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>07</strong></div>
+                  <p class="spot-items">Max · Madmax · Billy · The Bite · The Sauna Test</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>08</strong></div>
+                  <p class="spot-items">Mike · Will · Will the Wise · The Vanishing of Will Byers · The Weirdo on Maple Street</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>09</strong></div>
+                  <p class="spot-items">Lucas · Erica · Jonathan · Karen · Holly · Holly, Jolly</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>10</strong></div>
+                  <p class="spot-items">Argyle · Derek · Murray · Demobat · Demogorgon · The Mind Flayer · The Monster · The Flayed · The Battle of Starcourt · E Pluribus Unum · The Case of the Missing Lifeguard · The Lost Sister · The Piggyback · The Upside Down · Trick or Treat, Freak / The Pollywog</p>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="card-foot">
+            <span class="price">$149.99</span>
+            <div class="shopify-slot" data-shopify-product="8417932083387"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============================================================
+           BREAK · NBA HOOPS
+           ============================================================ -->
+      <article class="card" data-cat="nba">
+        <div class="card-art art-image">
+          <img src="images/nba-hoops.png" alt="2025/26 NBA Hoops 5 Box Hobby/Jumbo Mixer Break" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">NBA</span>
+          <h3>2025/26 NBA Hoops 5-Box Mixer</h3>
+          <span class="card-date" data-datetime="2026-05-29T17:00:00-07:00">FRI · MAY 29 · 5:00 PM PT</span>
+          <p class="card-desc">3 Hobby + 2 Jumbo · Randomized</p>
+          <span class="spots" data-product-spots="8419100655803" data-spots-max="20">20 spots remaining</span>
+
+          <details class="card-details">
+            <summary>How it works &amp; spot board <span class="chev" aria-hidden="true"></span></summary>
+            <div class="card-details-body">
+              <p>There are <strong>20 total spots</strong> in this 2025/26 Topps NBA Hoops 5 Box Hobby/Jumbo Mixer break. This break includes 3 Hobby Boxes + 2 Jumbo Hobby Boxes.</p>
+              <p>We will go live on YouTube at the specified date/time. After all spots sell, we will randomize the spot list live on YouTube before the rip. Whatever spot you land, you get all cards pulled from the boxes for every team listed in that spot.</p>
+              <p><em>Example:</em> If you land Boston Celtics + Portland Trail Blazers, you get all Celtics and Trail Blazers cards pulled. If you land a solo team spot, you get all cards pulled for that team.</p>
+              <p>All cards ship.</p>
+              <p class="spot-board-label">Spot Board · 20 Team Spots</p>
+              <ul class="spot-board numbered spot-board-cols">
+                <li><span class="spot-n">01</span> Dallas Mavericks</li>
+                <li><span class="spot-n">02</span> San Antonio Spurs</li>
+                <li><span class="spot-n">03</span> Philadelphia 76ers</li>
+                <li><span class="spot-n">04</span> New Orleans Pelicans</li>
+                <li><span class="spot-n">05</span> Utah Jazz</li>
+                <li><span class="spot-n">06</span> Charlotte Hornets</li>
+                <li><span class="spot-n">07</span> Phoenix Suns</li>
+                <li><span class="spot-n">08</span> Oklahoma City Thunder</li>
+                <li><span class="spot-n">09</span> Cleveland Cavaliers</li>
+                <li><span class="spot-n">10</span> Los Angeles Lakers</li>
+                <li><span class="spot-n">11</span> Golden State Warriors + Brooklyn Nets</li>
+                <li><span class="spot-n">12</span> Boston Celtics + Portland Trail Blazers</li>
+                <li><span class="spot-n">13</span> New York Knicks + Washington Wizards</li>
+                <li><span class="spot-n">14</span> Denver Nuggets + Chicago Bulls</li>
+                <li><span class="spot-n">15</span> Milwaukee Bucks + Toronto Raptors</li>
+                <li><span class="spot-n">16</span> Minnesota Timberwolves + Atlanta Hawks</li>
+                <li><span class="spot-n">17</span> Houston Rockets + Sacramento Kings</li>
+                <li><span class="spot-n">18</span> Miami Heat + Orlando Magic</li>
+                <li><span class="spot-n">19</span> Memphis Grizzlies + Indiana Pacers</li>
+                <li><span class="spot-n">20</span> Los Angeles Clippers + Detroit Pistons</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="card-foot">
+            <span class="price">$109.99</span>
+            <div class="shopify-slot" data-shopify-product="8419100655803"></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap foot">
+    <span>ZB</span>
+    <span>© <span id="year">2026</span> Zen Bros Breaks</span>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+<script src="shopify.js" defer></script>
+</body>
+</html>
