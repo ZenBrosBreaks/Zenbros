@@ -18,10 +18,14 @@ const CODE    = 'WELCOME10';
 const SHOP    = 'https://zenbrosbreaks.com';
 
 exports.handler = async function (event) {
+  // Diagnostic: prove the function actually got invoked
+  console.log('[welcome-email] Invoked. method=' + event.httpMethod + ', body-length=' + (event.body || '').length);
+
   // Netlify wraps the form submission as { payload: { form_name, data, ... } }
   let body;
   try { body = JSON.parse(event.body || '{}'); } catch (_) { return ok('Bad JSON'); }
   const payload = body && body.payload;
+  console.log('[welcome-email] form_name=' + (payload && payload.form_name));
   if (!payload || payload.form_name !== 'newsletter') return ok('Not our form');
 
   const email = payload.data && payload.data.email;
