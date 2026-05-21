@@ -62,11 +62,34 @@ exports.handler = async function (event) {
       return ok('Resend error (logged)');
     }
     console.log('[welcome-email] Sent to', email);
-    return ok('Sent');
   } catch (err) {
     console.error('[welcome-email] Send threw:', err && err.message);
     return ok('Send failed (logged)');
   }
+
+  // Best-effort sync to the Resend Audience used for broadcasts.
+  // Set RESEND_AUDIENCE_ID in Netlify env vars to enable; safe to skip otherwise.
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  if (audienceId) {
+    try {
+      const ares = await fetch('https://api.resend.com/audiences/' + audienceId + '/contacts', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({ email: email, unsubscribed: false })
+      });
+      if (ares.ok) {
+        console.log('[welcome-email] Added to audience:', email);
+      } else {
+        const atxt = await ares.text().catch(function () { return ''; });
+        // 409/422 typically = already in audience; log but don't fail
+        console.warn('[welcome-email] Audience add non-ok', ares.status, atxt);
+      }
+    } catch (err) {
+      console.error('[welcome-email] Audience add threw:', err && err.message);
+    }
+  }
+
+  return ok('Sent');
 };
 
 function ok(msg) { return { statusCode: 200, body: msg }; }
