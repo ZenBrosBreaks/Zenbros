@@ -1,0 +1,5 @@
+# Netlify build / deploy config — explicit so functions are always detected.
+
+[build]
+  publish    = "."
+  functions  = "netlify/functions"
