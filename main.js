@@ -300,4 +300,5 @@
 
   wireServiceForm('lendForm', 'lendDone', 'lendMsg', 'lendSubmit', 'Send Inquiry →');
   wireServiceForm('shipForm', 'shipDone', 'shipMsg', 'shipSubmit', 'Send Inquiry →');
+  wireServiceForm('contactForm', 'contactDone', 'contactMsg', 'contactSubmit', 'Send Message →');
 })();

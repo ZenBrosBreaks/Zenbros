@@ -3,3 +3,14 @@
 [build]
   publish    = "."
   functions  = "netlify/functions"
+
+# Redirect legacy /about.html → /contact.html (page was renamed)
+[[redirects]]
+  from = "/about.html"
+  to = "/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/contact.html"
+  status = 301
