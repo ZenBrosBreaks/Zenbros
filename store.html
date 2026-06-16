@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Zen Bros Breaks</title>
-  <meta name="description" content="Reach out to Zen Bros Breaks. Live on Whatnot, YouTube, Instagram, TikTok &mdash; or drop us a message directly." />
+  <title>The Shop — Zen Bros Breaks</title>
+  <meta name="description" content="Visit the Zen Bros Breaks storefront at 354 Park St, Moraga — right next to the Rheem Theatre. Browse cards, grab supplies, and pick up your break hits in person." />
 
-  <meta property="og:title" content="Contact — Zen Bros Breaks" />
-  <meta property="og:description" content="Reach out. Whatnot, YouTube, Instagram, TikTok, or send a message." />
+  <meta property="og:title" content="The Shop — Zen Bros Breaks" />
+  <meta property="og:description" content="Our storefront in Moraga, CA — 354 Park St, next to the Rheem Theatre." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.png" />
-  <meta property="og:url" content="https://www.zenbrosbreaks.com/contact.html" />
+  <meta property="og:url" content="https://www.zenbrosbreaks.com/store.html" />
   <meta name="theme-color" content="#0d0e10" />
 
-  <link rel="canonical" href="https://www.zenbrosbreaks.com/contact.html" />
+  <link rel="canonical" href="https://www.zenbrosbreaks.com/store.html" />
   <link rel="icon" type="image/png" href="images/logo-sm.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,7 +56,7 @@
         <span>Breaks</span>
         <span class="nav-link-sub">Live spots</span>
       </a>
-      <a href="store.html">
+      <a href="store.html" class="active">
         <span>Store</span>
         <span class="nav-link-sub">Visit us</span>
       </a>
@@ -68,7 +68,7 @@
         <span>Shipping</span>
         <span class="nav-link-sub">Pack &amp; ship</span>
       </a>
-      <a href="contact.html" class="active">
+      <a href="contact.html">
         <span>Contact</span>
         <span class="nav-link-sub">Get in touch</span>
       </a>
@@ -111,7 +111,7 @@
       <span class="drawer-label">Breaks</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
-    <a href="store.html">
+    <a href="store.html" class="active">
       <span class="drawer-label">Store</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
@@ -123,7 +123,7 @@
       <span class="drawer-label">Shipping</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
-    <a href="contact.html" class="active">
+    <a href="contact.html">
       <span class="drawer-label">Contact</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
@@ -162,65 +162,93 @@
 <div id="scrim" class="scrim" aria-hidden="true"></div>
 
 <!-- ============================================================
-     MAIN — Contact
+     MAIN — The Shop
      ============================================================ -->
-<main id="main" class="main">
-  <div class="wrap about">
+<main id="main" class="main store-main">
+  <div class="wrap">
 
-    <h1>Get in touch.</h1>
-    <p>Questions about a break, financing, shipping, or anything else? Find us on any of the channels below &mdash; or drop a message and we&rsquo;ll get back within 1 business day.</p>
+    <!-- HERO -->
+    <section class="store-hero">
+      <span class="store-tag">Our storefront &middot; Moraga, CA</span>
+      <h1>Come see us in person.</h1>
+      <p>We&rsquo;re more than a livestream. Swing by the shop to browse singles and sealed, grab supplies, pick up your break hits, or just talk cards. Right in the heart of Moraga &mdash; next to the Rheem Theatre.</p>
+    </section>
 
-    <!-- Channels (Whatnot / YouTube / Instagram / TikTok) -->
-    <div class="channels">
-      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="ch">
-        <span class="ch-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Zm-1.5-11.5v7l6-3.5Z"/></svg>
+    <!-- ============================================================
+         PHOTO GALLERY
+         HOW TO ADD PHOTOS:
+           1) Drop your images in the /images folder
+              (e.g. images/store-1.jpg, images/store-2.jpg, ...)
+           2) Replace the <div class="store-tile-empty">…</div> inside a
+              tile with:  <img src="images/store-1.jpg" alt="Inside the shop" />
+           3) Keep the wrapping <figure class="store-tile"> as-is.
+         Recommended: landscape photos, ~1200px wide, similar aspect.
+         ============================================================ -->
+    <div class="store-gallery">
+      <figure class="store-tile store-tile--feature">
+        <div class="store-tile-empty">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Add a photo</span>
+        </div>
+      </figure>
+      <figure class="store-tile">
+        <div class="store-tile-empty">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Add a photo</span>
+        </div>
+      </figure>
+      <figure class="store-tile">
+        <div class="store-tile-empty">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Add a photo</span>
+        </div>
+      </figure>
+      <figure class="store-tile">
+        <div class="store-tile-empty">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Add a photo</span>
+        </div>
+      </figure>
+      <figure class="store-tile">
+        <div class="store-tile-empty">
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          <span>Add a photo</span>
+        </div>
+      </figure>
+    </div>
+
+    <!-- WHAT YOU'LL FIND -->
+    <div class="store-perks">
+      <div class="store-perk">
+        <span class="store-perk-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
         </span>
-        <span class="ch-text">
-          <span class="ch-meta">LIVE &middot; AUCTIONED</span>
-          <span class="ch-name">Whatnot</span>
+        <h3>Browse the cases</h3>
+        <p>Singles, slabs, and sealed product on hand &mdash; sports and entertainment alike.</p>
+      </div>
+      <div class="store-perk">
+        <span class="store-perk-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
         </span>
-        <span class="ch-arrow">&rarr;</span>
-      </a>
-      <a href="https://www.youtube.com/@ZenBrosBreaks" target="_blank" rel="noopener" class="ch">
-        <span class="ch-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        <h3>Pick up your hits</h3>
+        <p>Landed a spot online? Skip shipping and grab your cards in person.</p>
+      </div>
+      <div class="store-perk">
+        <span class="store-perk-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>
         </span>
-        <span class="ch-text">
-          <span class="ch-meta">REPLAYS &middot; REVIEWS</span>
-          <span class="ch-name">YouTube</span>
-        </span>
-        <span class="ch-arrow">&rarr;</span>
-      </a>
-      <a href="https://www.instagram.com/zenbrosbreaks/" target="_blank" rel="noopener" class="ch">
-        <span class="ch-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </span>
-        <span class="ch-text">
-          <span class="ch-meta">DAILY UPDATES</span>
-          <span class="ch-name">Instagram</span>
-        </span>
-        <span class="ch-arrow">&rarr;</span>
-      </a>
-      <a href="https://www.tiktok.com/@zenbrosbreaks" target="_blank" rel="noopener" class="ch">
-        <span class="ch-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.45a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.88z"/></svg>
-        </span>
-        <span class="ch-text">
-          <span class="ch-meta">CLIPS &middot; HIGHLIGHTS</span>
-          <span class="ch-name">TikTok</span>
-        </span>
-        <span class="ch-arrow">&rarr;</span>
-      </a>
+        <h3>Supplies &amp; storage</h3>
+        <p>Toploaders, sleeves, cases, and team bags &mdash; everything to protect the pulls.</p>
+      </div>
     </div>
 
     <!-- ============================================================
-         STOREFRONT / LOCATION
+         LOCATION + MAP
          ============================================================ -->
-    <section class="lend-section" id="visit" style="border-top:1px solid var(--border);margin-top:2.2rem;">
-      <p class="lend-eyebrow">Visit the shop</p>
-      <h2 class="lend-h2">Find us in Moraga.</h2>
-      <p class="lend-section-sub">Swing by the storefront &mdash; just left of the Rheem Theatre in the Rheem Valley Shopping Center.</p>
+    <section class="store-section" id="visit">
+      <p class="lend-eyebrow">Find the shop</p>
+      <h2 class="lend-h2">354 Park St, Moraga.</h2>
+      <p class="lend-section-sub">Just left of the Rheem Theatre in the Rheem Valley Shopping Center. Parking right out front.</p>
 
       <a class="storefront" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">
         <span class="storefront-pin" aria-hidden="true">
@@ -237,47 +265,12 @@
         <span class="storefront-cta">Get directions &rarr;</span>
       </a>
 
-      <p style="margin-top:1rem;font-size:.9rem;color:var(--text-2);">
-        Photos, hours &amp; more on the <a href="store.html" style="color:var(--accent-2);font-weight:600;text-decoration:none;">store page &rarr;</a>
-      </p>
-    </section>
-
-    <!-- ============================================================
-         CONTACT FORM
-         ============================================================ -->
-    <section class="lend-section" id="message" style="border-top:1px solid var(--border);margin-top:2.2rem;">
-      <p class="lend-eyebrow">Send a message</p>
-      <h2 class="lend-h2">Drop us a line.</h2>
-      <p class="lend-section-sub">For anything not covered above &mdash; partnerships, press, customer support, just saying hi. We respond within 1 business day.</p>
-
-      <form name="general-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="lend-form" id="contactForm">
-        <input type="hidden" name="form-name" value="general-inquiry" />
-        <p class="promo-hp" aria-hidden="true">
-          <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-        </p>
-
-        <div class="lend-field">
-          <label for="contactName">Name</label>
-          <input type="text" id="contactName" name="name" required autocomplete="name" />
-        </div>
-
-        <div class="lend-field">
-          <label for="contactEmail">Email</label>
-          <input type="email" id="contactEmail" name="email" required autocomplete="email" />
-        </div>
-
-        <div class="lend-field">
-          <label for="contactMessage">Message</label>
-          <textarea id="contactMessage" name="message" rows="5" required placeholder="What&rsquo;s on your mind?"></textarea>
-        </div>
-
-        <button type="submit" class="lend-submit" id="contactSubmit">Send Message &rarr;</button>
-        <p class="lend-msg" id="contactMsg" role="status" aria-live="polite"></p>
-      </form>
-
-      <div class="lend-done" id="contactDone" hidden role="status" aria-live="polite">
-        <p class="lend-done-title">&check; Got it.</p>
-        <p>We&rsquo;ll be in touch shortly.</p>
+      <div class="storefront-map">
+        <iframe
+          src="https://maps.google.com/maps?q=354%20Park%20St%2C%20Moraga%2C%20CA%2094556&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          title="Map to Zen Bros Breaks — 354 Park St, Moraga, CA"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 
