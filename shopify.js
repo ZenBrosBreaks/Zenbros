@@ -284,8 +284,8 @@
   }
 
   function cartDrawerStyles(F) {
-    var T='#fafafa', T2='#afb1b9', T3='#83858e',
-        BG='#0d0e10', BG2='#131418', BORDER='#26272c';
+    var T='#f6f7f9', T2='#b4bac4', T3='#828a96',
+        BG='#101216', BG2='#15181e', BORDER='#2c313b';
     return {
       cart:      { 'background-color': BG, 'font-family': F, 'color': T, 'box-shadow': '-20px 0 60px rgba(0,0,0,0.6)' },
       header:    { 'background-color': BG2, 'border-bottom': '1px solid ' + BORDER, 'padding-top': '20px', 'padding-bottom': '20px' },
@@ -299,9 +299,9 @@
       currency:  { 'color': T, 'font-family': F },
       notice:    { 'color': T3, 'font-family': F, 'font-size': '11px', 'font-weight': '400' },
       button:    {
-        'background-color': '#0a84ff', 'color': '#ffffff', 'font-family': F, 'font-weight': '700',
+        'background-color': '#25e07f', 'color': '#06160e', 'font-family': F, 'font-weight': '800',
         'font-size': '13px', 'letter-spacing': '.04em', 'border-radius': '8px', 'padding': '14px 20px',
-        ':hover': { 'background-color': '#409cff' }, ':focus': { 'background-color': '#409cff' }
+        ':hover': { 'background-color': '#5bf5a6' }, ':focus': { 'background-color': '#5bf5a6' }
       },
       discountText:   { 'color': T2, 'font-family': F },
       discountIcon:   { 'fill': T2 },
@@ -310,8 +310,8 @@
   }
 
   function lineItemStyles(F) {
-    var T='#fafafa', T2='#afb1b9', T3='#83858e',
-        SURFACE='#16171a', SURFACE2='#1d1e22', BORDER='#26272c';
+    var T='#f6f7f9', T2='#b4bac4', T3='#828a96',
+        SURFACE='#1a1d24', SURFACE2='#22262f', BORDER='#2c313b';
     return {
       lineItem:      { 'background-color': 'transparent', 'border-bottom': '1px solid ' + BORDER, 'padding-top': '14px', 'padding-bottom': '14px', 'font-family': F },
       itemTitle:     { 'color': T, 'font-family': F, 'font-size': '14px', 'font-weight': '600', 'letter-spacing': '-0.005em', 'line-height': '1.35' },
@@ -337,13 +337,13 @@
         styles: {
           product: { 'display':'block', 'text-align':'right', 'max-width':'100%', 'margin':'0', 'padding':'0' },
           button: {
-            'background-color':'#0a84ff', 'color':'#ffffff', 'border-radius':'10px',
-            'font-family': F, 'font-weight':'700', 'font-size':'14px', 'letter-spacing':'.01em',
+            'background-color':'#25e07f', 'color':'#06160e', 'border-radius':'10px',
+            'font-family': F, 'font-weight':'800', 'font-size':'14px', 'letter-spacing':'.01em',
             'padding':'14px 24px',
-            'box-shadow':'0 4px 16px rgba(10,132,255,0.4), 0 0 0 1px rgba(10,132,255,0.55)',
+            'box-shadow':'0 6px 18px rgba(37,224,127,0.45), 0 0 0 1px rgba(37,224,127,0.55)',
             'transition':'transform .18s ease, box-shadow .18s ease, background-color .15s ease',
-            ':hover': { 'background-color':'#409cff', 'box-shadow':'0 8px 26px rgba(10,132,255,0.5), 0 0 0 1px rgba(64,156,255,0.7)', 'transform':'translateY(-1px)' },
-            ':focus': { 'background-color':'#409cff', 'outline':'none' },
+            ':hover': { 'background-color':'#5bf5a6', 'box-shadow':'0 9px 26px rgba(37,224,127,0.55), 0 0 0 1px rgba(91,245,166,0.7)', 'transform':'translateY(-1px)' },
+            ':focus': { 'background-color':'#5bf5a6', 'outline':'none' },
             ':active': { 'transform':'translateY(0)' }
           }
         }
@@ -419,18 +419,18 @@
     '#zen-clear-cart:hover{background:rgba(255,69,58,0.16) !important;border-color:rgba(255,69,58,0.45) !important;color:#ff9a92 !important;}',
     '.shopify-buy__quantity-container{',
       'display:inline-flex !important;align-items:center !important;',
-      'background:#1d1e22 !important;border:1px solid #26272c !important;',
+      'background:#22262f !important;border:1px solid #2c313b !important;',
       'border-radius:999px !important;overflow:hidden !important;padding:0 !important;gap:0 !important;',
     '}',
     '.shopify-buy__quantity-decrement,.shopify-buy__quantity-increment{',
       'width:30px !important;height:30px !important;',
       'display:inline-flex !important;align-items:center !important;justify-content:center !important;',
       'background:transparent !important;border:none !important;cursor:pointer !important;',
-      'color:#a8aab0 !important;padding:0 !important;margin:0 !important;',
+      'color:#b4bac4 !important;padding:0 !important;margin:0 !important;',
       'transition:color .15s, background .15s !important;',
     '}',
     '.shopify-buy__quantity-decrement:hover,.shopify-buy__quantity-increment:hover{',
-      'color:#fafafa !important;background:rgba(255,255,255,0.06) !important;',
+      'color:#f6f7f9 !important;background:rgba(255,255,255,0.06) !important;',
     '}',
     '.shopify-buy__quantity-decrement svg,.shopify-buy__quantity-increment svg{',
       'width:11px !important;height:11px !important;fill:currentColor !important;',
@@ -438,7 +438,7 @@
     '.shopify-buy__quantity,.shopify-buy__cart-item__quantity-input{',
       'width:34px !important;text-align:center !important;',
       'background:transparent !important;border:none !important;outline:none !important;',
-      'color:#fafafa !important;',
+      'color:#f6f7f9 !important;',
       'font-family:"Inter",system-ui,sans-serif !important;',
       'font-size:13px !important;font-weight:600 !important;',
       'padding:0 !important;margin:0 !important;',
