@@ -868,39 +868,42 @@ body[data-overlay="cart"] { overflow: hidden; }
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: clamp(3rem, 8vw, 5rem) 1.2rem clamp(3rem, 6vw, 4.5rem);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2.5rem, 5vw, 4rem);
   border-bottom: 1px solid var(--border);
   background-color: var(--bg);
-  /* Default (no poster): energetic green mesh so the page never looks empty. */
+  /* Soft green mesh glow behind the poster + details. */
   background-image:
-    radial-gradient(46% 55% at 18% 8%,  rgba(37,224,127,.16), transparent 62%),
-    radial-gradient(44% 52% at 86% 12%, rgba(34,211,238,.13), transparent 62%),
-    radial-gradient(60% 65% at 50% 108%, rgba(91,245,166,.09), transparent 64%);
+    radial-gradient(40% 50% at 12% 6%,  rgba(37,224,127,.14), transparent 62%),
+    radial-gradient(42% 50% at 90% 10%, rgba(34,211,238,.12), transparent 62%),
+    radial-gradient(60% 60% at 50% 110%, rgba(91,245,166,.07), transparent 64%);
   background-repeat: no-repeat;
-  transition: padding var(--t-base) var(--ease);
 }
-/* When images/hero-bg.png exists, main.js adds .has-poster and the poster
-   takes over as the background behind a darkening gradient. */
-.go-hero.has-poster {
-  padding-top: clamp(5rem, 16vw, 10rem);
-  background-image:
-    linear-gradient(180deg,
-      rgba(24,27,33,.38) 0%,
-      rgba(24,27,33,.46) 36%,
-      rgba(24,27,33,.82) 73%,
-      rgba(24,27,33,.97) 100%),
-    url('images/hero-bg.png');
-  background-size: cover;
-  background-position: center 18%;
+/* Poster + details, side by side on desktop, stacked on mobile */
+.go-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(1.8rem, 4vw, 3.2rem);
 }
-/* Extra vignette so the centred text stays legible over busy art */
-.go-hero::after {
-  content: '';
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background: radial-gradient(72% 56% at 50% 58%, rgba(24,27,33,.5), transparent 76%);
+.go-poster { position: relative; margin: 0; }
+.go-poster img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-2);
+  box-shadow: 0 28px 60px -22px rgba(0,0,0,.75), 0 0 60px -20px rgba(37,224,127,.25);
 }
-.go-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+.go-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+
+@media (min-width: 860px) {
+  .go-grid { grid-template-columns: minmax(0, .82fr) minmax(0, 1fr); text-align: left; }
+  .go-poster img { max-width: 380px; margin: 0; }
+  .go-grid .go-inner { margin: 0; }
+  .go-grid .go-where { margin-left: 0; margin-right: 0; }
+  .go-grid .go-cta-row { justify-content: flex-start; }
+}
 .go-kicker {
   display: inline-block;
   padding: .4rem .95rem;

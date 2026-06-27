@@ -302,17 +302,6 @@
   wireServiceForm('shipForm', 'shipDone', 'shipMsg', 'shipSubmit', 'Send Inquiry →');
   wireServiceForm('contactForm', 'contactDone', 'contactMsg', 'contactSubmit', 'Send Message →');
 
-  // --- Use the promo poster as the hero background once it exists ---
-  // Drops in automatically when images/hero-bg.png is present; until then
-  // the hero shows the green mesh fallback (no broken image).
-  (function () {
-    var hero = document.querySelector('.go-hero');
-    if (!hero) return;
-    var img = new Image();
-    img.onload = function () { hero.classList.add('has-poster'); };
-    img.src = 'images/hero-bg.png';
-  })();
-
   // --- Grand-opening countdown (degrades gracefully once the day passes) ---
   (function () {
     var el = document.querySelector('[data-countdown]');
