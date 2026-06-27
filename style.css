@@ -868,30 +868,25 @@ body[data-overlay="cart"] { overflow: hidden; }
   position: relative;
   overflow: hidden;
   text-align: center;
-  display: flex; align-items: center; justify-content: center;
-  min-height: clamp(540px, 80vh, 780px);
-  padding: clamp(3rem, 8vw, 5rem) 1.2rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: clamp(580px, 92vh, 900px);
+  padding: clamp(2.5rem, 6vw, 4rem) 1.2rem clamp(2.5rem, 5vw, 3.5rem);
   border-bottom: 1px solid var(--border);
-  background-color: var(--bg);
+  /* The actual poster — characters visible up top. */
+  background: var(--bg) url('images/hero-poster.jpg') center top / cover no-repeat;
 }
-/* The promo poster blown up + blurred into a bright, saturated colour wash. */
-.go-hero::before {
-  content: '';
-  position: absolute; inset: -10%;
-  z-index: 0;
-  background: url('images/hero-poster.jpg') center 28% / cover no-repeat;
-  filter: blur(34px) saturate(1.95) brightness(1.18) contrast(1.05);
-  transform: scale(1.15);
-}
-/* Light scrim only — keep the colour vivid; the text carries its own dark halo. */
+/* Scrim: clear up top so the art shows, darkening into a readable band at the bottom. */
 .go-hero::after {
   content: '';
   position: absolute; inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(46% 50% at 50% 44%, rgba(4,6,9,.5), transparent 74%),
-    linear-gradient(180deg, rgba(16,18,22,.18) 0%, rgba(16,18,22,.06) 42%, rgba(16,18,22,.46) 100%);
+  background: linear-gradient(180deg,
+    rgba(16,18,22,.30) 0%,
+    rgba(16,18,22,.10) 18%,
+    rgba(16,18,22,.58) 48%,
+    rgba(16,18,22,.93) 74%,
+    rgba(16,18,22,.99) 100%);
 }
 .go-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .go-kicker {
