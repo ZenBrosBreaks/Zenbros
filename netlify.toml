@@ -14,3 +14,14 @@
   from = "/about"
   to = "/contact.html"
   status = 301
+
+# Store page folded into the storefront-focused home page
+[[redirects]]
+  from = "/store.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/store"
+  to = "/"
+  status = 301

@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shipping &amp; Fulfillment — Zen Bros</title>
-  <meta name="description" content="Post-break shipping & fulfillment for Bay Area card breakers. We sort, pack, label, and ship every spot. Local pickup available." />
+  <title>Breaks — Zen Bros Breaks</title>
+  <meta name="description" content="Live break spots from Zen Bros Breaks — sports & entertainment cards ripped live on YouTube and Whatnot." />
 
-  <meta property="og:title" content="Zen Bros Shipping &amp; Fulfillment" />
-  <meta property="og:description" content="Post-break shipping for Bay Area breakers. We sort, pack, label, ship." />
+  <meta property="og:title" content="Breaks — Zen Bros Breaks" />
+  <meta property="og:description" content="Live break spots — ripped live on YouTube and Whatnot." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.png" />
-  <meta property="og:url" content="https://www.zenbrosbreaks.com/shipping.html" />
+  <meta property="og:url" content="https://www.zenbrosbreaks.com/breaks.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#181b21" />
 
-  <link rel="canonical" href="https://www.zenbrosbreaks.com/shipping.html" />
+  <link rel="canonical" href="https://www.zenbrosbreaks.com/breaks.html" />
   <link rel="icon" type="image/png" href="images/logo-sm.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://sdks.shopifycdn.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>try{if(localStorage.getItem('zenbros:joined'))document.documentElement.classList.add('zen-joined');}catch(e){}</script>
@@ -56,7 +57,7 @@
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="breaks.html">
+      <a href="breaks.html" class="active">
         <span>Breaks</span>
         <span class="nav-link-sub">Live spots</span>
       </a>
@@ -64,7 +65,7 @@
         <span>Lending</span>
         <span class="nav-link-sub">Financing</span>
       </a>
-      <a href="shipping.html" class="active">
+      <a href="shipping.html">
         <span>Shipping</span>
         <span class="nav-link-sub">Pack &amp; ship</span>
       </a>
@@ -94,7 +95,7 @@
 </header>
 
 <!-- ============================================================
-     MOBILE DRAWER
+     MOBILE DRAWER (used on all viewport sizes; nav stays minimal)
      ============================================================ -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <header class="drawer-head">
@@ -110,25 +111,25 @@
   </header>
 
   <nav class="drawer-nav" aria-label="Menu">
-    <a href="breaks.html">
+    <a href="breaks.html" class="active">
       <span class="drawer-label">Breaks</span>
-      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
     </a>
     <a href="lending.html">
       <span class="drawer-label">Lending</span>
-      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
     </a>
-    <a href="shipping.html" class="active">
+    <a href="shipping.html">
       <span class="drawer-label">Shipping</span>
-      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
     </a>
     <a href="contact.html">
       <span class="drawer-label">Contact</span>
-      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
+      <span class="drawer-arrow" aria-hidden="true">→</span>
     </a>
     <button id="drawerCart" class="drawer-link" type="button">
       <span class="drawer-label">Cart</span>
-      <span id="drawerCartCount" class="drawer-arrow drawer-cart-count" aria-hidden="true">&rarr;</span>
+      <span id="drawerCartCount" class="drawer-arrow drawer-cart-count" aria-hidden="true">→</span>
     </button>
   </nav>
 
@@ -158,153 +159,123 @@
   </footer>
 </aside>
 
+<!-- One unified scrim — drives both drawer & cart visibility -->
 <div id="scrim" class="scrim" aria-hidden="true"></div>
 
 <!-- ============================================================
-     MAIN — Shipping & Fulfillment
+     HERO — vibrant gradient-mesh banner
      ============================================================ -->
-<main id="main" class="main lending-main">
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <span class="hero-kicker"><span class="dot"></span> New breaks every week</span>
+    <h1 class="hero-title">Get a spot, <span class="hero-grad">we rip it live.</span></h1>
+    <p class="hero-sub">Grab your spot before we go live, then watch the boxes get opened on YouTube and Whatnot. Whatever lands on your spot is yours, and we ship it straight to you.</p>
+    <div class="hero-cta-row">
+      <a href="#breaks" class="hero-cta">See this week&rsquo;s breaks &darr;</a>
+      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="hero-cta-ghost">Watch live <span class="dot"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MAIN — Breaks grid
+     ============================================================ -->
+<main id="main" class="main">
   <div class="wrap">
 
-    <!-- HERO -->
-    <section class="lend-hero">
-      <p class="lend-tag">Zen Bros Shipping &amp; Fulfillment</p>
-      <h1 class="lend-h1">You rip the break. We&rsquo;ll handle the shipping.</h1>
-      <p class="lend-sub">If you&rsquo;re breaking in the <strong>Bay Area</strong>, we&rsquo;ll take care of the part nobody likes: sorting, packing, and getting every spot out the door so you can focus on the next break.</p>
-      <a href="#contact" class="lend-cta">Talk to us &rarr;</a>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="lend-section">
-      <p class="lend-eyebrow">What we do</p>
-      <h2 class="lend-h2">We do the part nobody likes.</h2>
-      <div class="lend-grid">
-        <div class="lend-card-l">
-          <p class="lend-card-n">01</p>
-          <h3>Packing and shipping</h3>
-          <p>Once your break wraps, we sort every spot, pack it, and get it shipped. You run the stream, we deal with the boxes.</p>
-        </div>
-        <div class="lend-card-l">
-          <p class="lend-card-n">02</p>
-          <h3>Pickup or drop-off</h3>
-          <p>We can grab your inventory locally, or you can drop it off. Whatever&rsquo;s easier for you.</p>
-        </div>
-        <div class="lend-card-l">
-          <p class="lend-card-n">03</p>
-          <h3>Packed right</h3>
-          <p>Sleeves, toploaders, semi-rigids, team bags, the works. Tell us how you like it done, or let us run our setup.</p>
-        </div>
-        <div class="lend-card-l">
-          <p class="lend-card-n">04</p>
-          <h3>Big hits, extra care</h3>
-          <p>The bangers get signature confirmation, photo proof, and reinforced packaging so nobody&rsquo;s grail shows up bent.</p>
-        </div>
+    <div class="filter-row" id="breaks" role="region" aria-label="Filter breaks">
+      <div class="filters" role="tablist" aria-label="Sport filters">
+        <button type="button" class="chip active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="stranger-things">Stranger Things</button>
       </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="lend-section">
-      <p class="lend-eyebrow">How it works</p>
-      <h2 class="lend-h2">Start to finish.</h2>
-      <ol class="lend-steps">
-        <li>
-          <span class="lend-step-n">01</span>
-          <div>
-            <h4>Run your break</h4>
-            <p>Do your thing on stream. Forget about the boxes.</p>
-          </div>
-        </li>
-        <li>
-          <span class="lend-step-n">02</span>
-          <div>
-            <h4>Pickup or drop-off</h4>
-            <p>We grab it locally, or you ship or drop it to us.</p>
-          </div>
-        </li>
-        <li>
-          <span class="lend-step-n">03</span>
-          <div>
-            <h4>Sort and pack</h4>
-            <p>We sort every spot and pack it safe. Want pics of the pack-out? Just ask.</p>
-          </div>
-        </li>
-        <li>
-          <span class="lend-step-n">04</span>
-          <div>
-            <h4>Ship out</h4>
-            <p>USPS or UPS, whatever works best for your buyers and your budget.</p>
-          </div>
-        </li>
-        <li>
-          <span class="lend-step-n">05</span>
-          <div>
-            <h4>We handle problems</h4>
-            <p>If something gets lost or smashed in transit, we chase the carrier and deal with the claim. Not you.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <section class="lend-section" id="contact">
-      <p class="lend-eyebrow">Get in touch</p>
-      <h2 class="lend-h2">Let&rsquo;s talk.</h2>
-      <p class="lend-section-sub">Send over your details and we&rsquo;ll get back within a day with pricing that fits how you break.</p>
-
-      <form name="shipping-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="lend-form" id="shipForm">
-        <input type="hidden" name="form-name" value="shipping-inquiry" />
-        <p class="promo-hp" aria-hidden="true">
-          <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-        </p>
-
-        <div class="lend-field">
-          <label for="shipName">Name / business</label>
-          <input type="text" id="shipName" name="name" required autocomplete="name" />
-        </div>
-
-        <div class="lend-field-row">
-          <div class="lend-field">
-            <label for="shipEmail">Email</label>
-            <input type="email" id="shipEmail" name="email" required autocomplete="email" />
-          </div>
-          <div class="lend-field">
-            <label for="shipPhone">Phone <span class="lend-opt">(optional)</span></label>
-            <input type="tel" id="shipPhone" name="phone" autocomplete="tel" />
-          </div>
-        </div>
-
-        <div class="lend-field">
-          <label for="shipVolume">Typical break volume</label>
-          <select id="shipVolume" name="break_volume" required>
-            <option value="">Packages per break&hellip;</option>
-            <option value="1-25">1 &ndash; 25 packages</option>
-            <option value="25-50">25 &ndash; 50 packages</option>
-            <option value="50-100">50 &ndash; 100 packages</option>
-            <option value="100+">100+ packages</option>
-            <option value="varies">Varies a lot</option>
-          </select>
-        </div>
-
-        <div class="lend-field">
-          <label for="shipMessage">Tell us about your operation</label>
-          <textarea id="shipMessage" name="message" rows="5" required placeholder="How often do you break? What platforms (Whatnot, YouTube, etc.)? Where are you located in the Bay? Anything else we should know."></textarea>
-        </div>
-
-        <button type="submit" class="lend-submit" id="shipSubmit">Send Inquiry &rarr;</button>
-        <p class="lend-msg" id="shipMsg" role="status" aria-live="polite"></p>
-      </form>
-
-      <div class="lend-done" id="shipDone" hidden role="status" aria-live="polite">
-        <p class="lend-done-title">&check; Got it.</p>
-        <p>We&rsquo;ll be in touch within 1 business day with a quote tailored to your volume.</p>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search breaks…" aria-label="Search breaks" autocomplete="off" />
       </div>
-    </section>
+    </div>
 
-    <!-- FINE PRINT -->
-    <section class="lend-fineprint">
-      <p>Zen Bros Shipping &amp; Fulfillment is a service offered to Bay Area breakers. Pickup availability and pricing vary by location, volume, and packaging requirements. Shipping insurance is the responsibility of the breaker unless explicitly included in your agreement. Final pricing is provided after we discuss your operation. Terms vary by engagement.</p>
-    </section>
+    <p class="filter-empty" id="filterEmpty" hidden>No breaks match that filter.</p>
 
+    <div class="grid">
+
+      <!-- ============================================================
+           BREAK · STRANGER THINGS
+           ============================================================ -->
+      <article class="card" data-cat="stranger-things">
+        <div class="card-art art-image">
+          <img src="images/stranger-things.png" alt="Stranger Things 3 Box Hobby Break" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Stranger Things</span>
+          <h3>Stranger Things — 3-Box Hobby</h3>
+          <span class="card-date" data-datetime="2026-06-27T17:00:00-07:00">SAT · JUN 27 · 5:00 PM PT</span>
+          <p class="card-desc">Topps Hobby · Randomized</p>
+          <span class="spots" data-product-spots="8417932083387" data-spots-max="10">10 spots remaining</span>
+
+          <details class="card-details">
+            <summary>How it works &amp; spot board <span class="chev" aria-hidden="true"></span></summary>
+            <div class="card-details-body">
+              <p>There are <strong>10 total spots</strong> in this 3x Stranger Things Hobby box break. After all spots sell, we will randomize the spot list live before the rip. Whatever spot you land, you get all cards pulled from the boxes for every character, episode, creature, or theme listed in that spot.</p>
+              <p><em>Example:</em> If you land the Eddie + Hellfire Club spot, you get all Eddie cards, all Hellfire Club cards, and every other card listed under that full spot.</p>
+              <p>All cards ship.</p>
+              <p class="spot-board-label">Spot Board · 10 Spots</p>
+              <p class="spot-board-note">Each numbered spot below is one bundle. Land a spot and you get every character, episode, creature, and theme listed in it.</p>
+              <ul class="spot-board grouped">
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>01</strong></div>
+                  <p class="spot-items">Eleven · The Nina Project · The Monster and the Superhero · Papa</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>02</strong></div>
+                  <p class="spot-items">Vecna · Vecna&rsquo;s Curse · The Massacre at Hawkins Lab · Henry Creel</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>03</strong></div>
+                  <p class="spot-items">Eddie · The Hellfire Club · Chrissy · Dear Billy</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>04</strong></div>
+                  <p class="spot-items">Steve · Robin · Nancy · The Dive · The Mall Rats</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>05</strong></div>
+                  <p class="spot-items">Dustin · Suzie, Do You Copy · Dig Dug / The Spy · The Flea and the Acrobat / The Bathtub</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>06</strong></div>
+                  <p class="spot-items">Hopper · Dr. Brenner · Dr. Kay · The Body · The Gate</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>07</strong></div>
+                  <p class="spot-items">Max · Madmax · Billy · The Bite · The Sauna Test</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>08</strong></div>
+                  <p class="spot-items">Mike · Will · Will the Wise · The Vanishing of Will Byers · The Weirdo on Maple Street</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>09</strong></div>
+                  <p class="spot-items">Lucas · Erica · Jonathan · Karen · Holly · Holly, Jolly</p>
+                </li>
+                <li>
+                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>10</strong></div>
+                  <p class="spot-items">Argyle · Derek · Murray · Demobat · Demogorgon · The Mind Flayer · The Monster · The Flayed · The Battle of Starcourt · E Pluribus Unum · The Case of the Missing Lifeguard · The Lost Sister · The Piggyback · The Upside Down · Trick or Treat, Freak / The Pollywog</p>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="card-foot">
+            <span class="price">$149.99</span>
+            <div class="shopify-slot" data-shopify-product="8417932083387"></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </div>
 </main>
 
@@ -314,7 +285,7 @@
 <footer class="footer">
   <div class="wrap foot">
     <span>ZB</span>
-    <span>&copy; <span id="year">2026</span> Zen Bros Breaks</span>
+    <span>© <span id="year">2026</span> Zen Bros Breaks</span>
   </div>
 </footer>
 

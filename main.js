@@ -301,4 +301,20 @@
   wireServiceForm('lendForm', 'lendDone', 'lendMsg', 'lendSubmit', 'Send Inquiry →');
   wireServiceForm('shipForm', 'shipDone', 'shipMsg', 'shipSubmit', 'Send Inquiry →');
   wireServiceForm('contactForm', 'contactDone', 'contactMsg', 'contactSubmit', 'Send Message →');
+
+  // --- Grand-opening countdown (degrades gracefully once the day passes) ---
+  (function () {
+    var el = document.querySelector('[data-countdown]');
+    if (!el) return;
+    var target = new Date(el.getAttribute('data-countdown') + 'T00:00:00');
+    if (isNaN(target.getTime())) return;
+    var now = new Date(); now.setHours(0, 0, 0, 0);
+    var days = Math.round((target - now) / 86400000);
+    var txt;
+    if (days > 1)       txt = days + ' days to go';
+    else if (days === 1) txt = 'Tomorrow!';
+    else if (days === 0) txt = 'Opening today!';
+    else                 txt = 'Now open — come visit!';
+    el.textContent = txt;
+  })();
 })();

@@ -30,18 +30,18 @@ a { color: inherit; }
 [hidden] { display: none !important; }   /* the HTML attribute must always win over class display rules */
 
 :root {
-  /* Surface ramp — grey charcoal, layered (lifted off pure black) */
-  --bg:        #101216;
-  --bg-2:      #15181e;
-  --surface:   #1a1d24;
-  --surface-2: #22262f;
-  --border:    #2c313b;
-  --border-2:  #3b414e;
+  /* Surface ramp — soft graphite, lifted lighter for a more inviting feel */
+  --bg:        #181b21;
+  --bg-2:      #1d2128;
+  --surface:   #242832;
+  --surface-2: #2e333d;
+  --border:    #383e49;
+  --border-2:  #49505d;
 
   /* Ink ramp */
-  --text:      #f6f7f9;
-  --text-2:    #b4bac4;
-  --text-3:    #828a96;
+  --text:      #f7f8fa;
+  --text-2:    #c3c8d1;
+  --text-3:    #8c94a1;
 
   /* Accent — electric jade-green primary + cyan partner.
      Bright, energetic "zenbros" pop on the grey base. Used on
@@ -84,6 +84,14 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   :root { --t-fast: .01ms; --t-base: .01ms; --t-slow: .01ms; }
   html { scroll-behavior: auto; }
+}
+
+/* Smooth navigation between pages + smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  body { animation: pageIn .34s var(--ease) both; }
+  @keyframes pageIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 }
 
 
@@ -850,6 +858,77 @@ body[data-overlay="cart"] { overflow: hidden; }
     from { transform: translate3d(-2%, -1%, 0) scale(1.02); }
     to   { transform: translate3d(3%, 2%, 0) scale(1.08); }
   }
+}
+
+
+/* ============================================================
+   6d) GRAND OPENING — storefront front page
+   ============================================================ */
+.go-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(3.5rem, 10vw, 7rem) 1.2rem clamp(3rem, 6vw, 4.5rem);
+  border-bottom: 1px solid var(--border);
+}
+.go-inner { position: relative; max-width: 820px; margin: 0 auto; }
+.go-kicker {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .5rem 1.05rem;
+  margin-bottom: 1.5rem;
+  font-size: .72rem; font-weight: 800;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--accent-2);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+}
+.go-brand {
+  font-family: "Permanent Marker", "Inter", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: .9rem;
+}
+.go-date {
+  font-size: clamp(3.6rem, 14vw, 7.5rem);
+  font-weight: 900; letter-spacing: -.04em; line-height: .88;
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-shadow: 0 0 55px rgba(37,224,127,.28);
+}
+.go-year {
+  margin-top: .55rem;
+  font-size: clamp(.85rem, 2vw, 1rem); font-weight: 800;
+  letter-spacing: .34em; text-transform: uppercase;
+  color: var(--text-2);
+}
+.go-where {
+  margin: 1.6rem auto 0;
+  max-width: 34ch;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  font-weight: 600; color: var(--text);
+  line-height: 1.45;
+}
+.go-where span { color: var(--text-3); font-weight: 500; display: block; font-size: .88em; margin-top: .2rem; }
+.go-free {
+  display: inline-block;
+  margin-top: 1.3rem;
+  font-size: .98rem; font-weight: 700;
+  color: var(--accent-2);
+}
+.go-count {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin: 1.4rem auto 0;
+  padding: .5rem 1rem;
+  font-size: .8rem; font-weight: 700; letter-spacing: .03em;
+  color: var(--text); background: var(--surface);
+  border: 1px solid var(--border-2); border-radius: 999px;
+}
+.go-count b { color: var(--accent-2); font-weight: 800; }
+.go-cta-row {
+  display: flex; flex-wrap: wrap; gap: .7rem; justify-content: center;
+  margin-top: 1.9rem;
 }
 
 
