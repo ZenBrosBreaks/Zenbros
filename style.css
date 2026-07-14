@@ -172,14 +172,10 @@ h1, h2 {
 .zen-bg video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-}
-.zen-bg-blur {
+  /* Full-bleed: fill the whole viewport, sharp, edge to edge.
+     Anchored low so any vertical crop trims sky, not the garden. */
   object-fit: cover;
-  filter: blur(28px) saturate(1.35) brightness(.9);
-  transform: scale(1.1);
-}
-.zen-bg-main {
-  object-fit: contain;
+  object-position: 50% 68%;
   filter: saturate(1.12) brightness(1.04);
 }
 .zen-bg::after {
