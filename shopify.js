@@ -299,9 +299,9 @@
       currency:  { 'color': T, 'font-family': F },
       notice:    { 'color': T3, 'font-family': F, 'font-size': '11px', 'font-weight': '400' },
       button:    {
-        'background-color': '#25e07f', 'color': '#06160e', 'font-family': F, 'font-weight': '800',
+        'background-color': '#34d399', 'color': '#06160e', 'font-family': F, 'font-weight': '800',
         'font-size': '13px', 'letter-spacing': '.04em', 'border-radius': '8px', 'padding': '14px 20px',
-        ':hover': { 'background-color': '#5bf5a6' }, ':focus': { 'background-color': '#5bf5a6' }
+        ':hover': { 'background-color': '#6ee7b7' }, ':focus': { 'background-color': '#6ee7b7' }
       },
       discountText:   { 'color': T2, 'font-family': F },
       discountIcon:   { 'fill': T2 },
@@ -337,13 +337,13 @@
         styles: {
           product: { 'display':'block', 'text-align':'right', 'max-width':'100%', 'margin':'0', 'padding':'0' },
           button: {
-            'background-color':'#25e07f', 'color':'#06160e', 'border-radius':'10px',
+            'background-color':'#34d399', 'color':'#06160e', 'border-radius':'10px',
             'font-family': F, 'font-weight':'800', 'font-size':'14px', 'letter-spacing':'.01em',
             'padding':'14px 24px',
-            'box-shadow':'0 6px 18px rgba(37,224,127,0.45), 0 0 0 1px rgba(37,224,127,0.55)',
+            'box-shadow':'0 6px 18px rgba(52,211,153,0.45), 0 0 0 1px rgba(52,211,153,0.55)',
             'transition':'transform .18s ease, box-shadow .18s ease, background-color .15s ease',
-            ':hover': { 'background-color':'#5bf5a6', 'box-shadow':'0 9px 26px rgba(37,224,127,0.55), 0 0 0 1px rgba(91,245,166,0.7)', 'transform':'translateY(-1px)' },
-            ':focus': { 'background-color':'#5bf5a6', 'outline':'none' },
+            ':hover': { 'background-color':'#6ee7b7', 'box-shadow':'0 9px 26px rgba(52,211,153,0.55), 0 0 0 1px rgba(110,231,183,0.7)', 'transform':'translateY(-1px)' },
+            ':focus': { 'background-color':'#6ee7b7', 'outline':'none' },
             ':active': { 'transform':'translateY(0)' }
           }
         }

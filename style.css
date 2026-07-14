@@ -43,19 +43,28 @@ a { color: inherit; }
   --text-2:    #c3c8d1;
   --text-3:    #8c94a1;
 
-  /* Accent — electric jade-green primary + cyan partner.
-     Bright, energetic "zenbros" pop on the grey base. Used on
-     actions, active states, glows, and gradient highlights. */
-  --accent:      #25e07f;
-  --accent-2:    #5bf5a6;
+  /* Accent — garden palette pulled from the live zen background:
+     matcha jade + sky blue, with sakura pink as the soft highlight. */
+  --accent:      #34d399;
+  --accent-2:    #6ee7b7;
   --accent-ink:  #06160e;
-  --accent-soft: rgba(37,224,127,.13);
-  --accent-line: rgba(91,245,166,.45);
-  --accent-cy:   #22d3ee;
-  --accent-cy-soft: rgba(34,211,238,.13);
-  --grad:        linear-gradient(120deg, #25e07f 0%, #22d3ee 100%);
-  --grad-hot:    linear-gradient(120deg, #5bf5a6 0%, #38e7f2 100%);
-  --glow:        0 12px 34px -10px rgba(37,224,127,.55);
+  --accent-soft: rgba(52,211,153,.13);
+  --accent-line: rgba(110,231,183,.45);
+  --accent-cy:   #38bdf8;
+  --accent-cy-soft: rgba(56,189,248,.13);
+  --sakura:      #f7b6c8;
+  --sakura-soft: rgba(247,182,200,.16);
+  --grad:        linear-gradient(120deg, #34d399 0%, #38bdf8 100%);
+  --grad-hot:    linear-gradient(120deg, #6ee7b7 0%, #7dd3fc 100%);
+  --glow:        0 12px 34px -10px rgba(52,211,153,.55);
+
+  /* Brush display face — the "Zen Bros" wordmark font, used for headings */
+  --font-brush:  "Permanent Marker", "Inter", sans-serif;
+
+  /* Glass panels floating over the live background */
+  --glass:       rgba(20, 23, 29, .72);
+  --glass-2:     rgba(26, 30, 37, .66);
+  --glass-line:  rgba(255, 255, 255, .09);
 
   /* Status — colour earns attention only where it matters */
   --ok:        #2fe08a;
@@ -117,6 +126,46 @@ body[data-overlay="drawer"],
 body[data-overlay="cart"] { overflow: hidden; }
 ::selection { background: var(--accent); color: #fff; }
 
+/* Brush display face — the wordmark's Permanent Marker carried through
+   all major headings. Body copy stays Inter for readability. */
+h1, h2,
+.lend-h1, .lend-h2,
+.hero-title, .go-date,
+.about h1, .store-hero h1,
+.lend-done-title {
+  font-family: var(--font-brush);
+  font-weight: 400;
+  letter-spacing: .015em;
+}
+
+
+/* ============================================================
+   2b) LIVE ZEN BACKGROUND — fixed video behind every page.
+   Stays put while the page scrolls; content floats over it
+   in glass panels. Falls back to the flat dark bg when hidden.
+   ============================================================ */
+.zen-bg {
+  position: fixed; inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.zen-bg video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+/* Uniform tint so white text + glass panels read over the bright garden */
+.zen-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(14,16,19,.32) 0%,
+    rgba(14,16,19,.38) 55%,
+    rgba(14,16,19,.50) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .zen-bg { display: none; }
+}
+
 
 /* ============================================================
    3) LAYOUT PRIMITIVES
@@ -151,16 +200,16 @@ body[data-overlay="cart"] { overflow: hidden; }
 .nav {
   position: sticky; top: 0;
   height: var(--nav-h);
-  background: rgba(13,14,16,.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(13,15,18,.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   z-index: var(--z-nav);
   transition: border-color var(--t-base) var(--ease), background var(--t-base) var(--ease);
 }
 .nav.scrolled {
-  background: rgba(13,14,16,.95);
-  border-bottom-color: var(--border);
+  background: rgba(13,15,18,.78);
+  border-bottom-color: var(--glass-line);
 }
 .nav-row {
   height: 100%;
@@ -226,6 +275,14 @@ body[data-overlay="cart"] { overflow: hidden; }
   flex-direction: column;
   align-items: flex-start;
   gap: 3px;
+}
+/* Brush face on the main nav labels — carries the wordmark vibe */
+.nav-links a:not(.nav-link-live) > span:first-child {
+  font-family: var(--font-brush);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: .035em;
+  line-height: 1;
 }
 .nav-link-sub {
   font-size: .58rem;
@@ -515,17 +572,18 @@ body[data-overlay="cart"] { overflow: hidden; }
   max-width: 760px;
 }
 .about h1 {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  font-weight: 800;
-  letter-spacing: -.035em;
-  line-height: 1.05;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: .01em;
+  line-height: 1.12;
   margin-bottom: 1.25rem;
+  text-shadow: 0 2px 22px rgba(0,0,0,.85), 0 0 10px rgba(0,0,0,.6);
 }
 .about > p {
   font-size: 1.05rem;
-  color: var(--text-2);
+  color: #dfe3e9;
   line-height: 1.7;
   margin-bottom: 2.5rem;
+  text-shadow: 0 1px 14px rgba(0,0,0,.85);
 }
 
 .channels {
@@ -541,7 +599,9 @@ body[data-overlay="cart"] { overflow: hidden; }
   display: flex; align-items: center;
   gap: 1.1rem;
   padding: 1.3rem 1.5rem;
-  background: var(--surface);
+  background: rgba(30,34,42,.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   text-decoration: none;
   color: var(--text);
   transition: background var(--t-fast) var(--ease);
@@ -759,9 +819,13 @@ body[data-overlay="cart"] { overflow: hidden; }
 .store-perk p { font-size: .87rem; color: var(--text-2); line-height: 1.5; }
 
 .store-section {
-  max-width: 980px; margin: 3rem auto 0;
-  padding-top: 2.4rem;
-  border-top: 1px solid var(--border);
+  max-width: 980px; margin: 2.4rem auto 0;
+  padding: 2.2rem clamp(1.2rem, 3vw, 2rem) 2.4rem;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--r-lg);
 }
 
 
@@ -779,9 +843,9 @@ body[data-overlay="cart"] { overflow: hidden; }
   position: absolute; inset: -30% -10% -10%;
   pointer-events: none;
   background:
-    radial-gradient(46% 55% at 18% 8%,  rgba(37,224,127,.15), transparent 62%),
-    radial-gradient(44% 52% at 86% 12%, rgba(34,211,238,.12), transparent 62%),
-    radial-gradient(60% 65% at 50% 108%, rgba(91,245,166,.08), transparent 64%);
+    radial-gradient(46% 55% at 18% 8%,  rgba(52,211,153,.15), transparent 62%),
+    radial-gradient(44% 52% at 86% 12%, rgba(56,189,248,.12), transparent 62%),
+    radial-gradient(60% 65% at 50% 108%, rgba(110,231,183,.08), transparent 64%);
   filter: blur(8px);
 }
 /* faint grid texture over the glow */
@@ -817,13 +881,15 @@ body[data-overlay="cart"] { overflow: hidden; }
   background: var(--grad);
   -webkit-background-clip: text; background-clip: text;
   color: transparent;
-  text-shadow: 0 0 36px rgba(37,224,127,.35);
+  text-shadow: 0 0 36px rgba(52,211,153,.35);
 }
 .hero-sub {
   font-size: clamp(1rem, 1.5vw, 1.12rem);
-  color: var(--text-2); line-height: 1.6;
+  color: #dfe3e9; line-height: 1.6;
   max-width: 52ch; margin: 0 auto 1.7rem;
+  text-shadow: 0 1px 14px rgba(0,0,0,.85);
 }
+.hero-title { text-shadow: 0 2px 24px rgba(0,0,0,.85), 0 0 12px rgba(0,0,0,.6); }
 .hero-cta-row {
   display: flex; flex-wrap: wrap;
   gap: .7rem; justify-content: center;
@@ -836,7 +902,7 @@ body[data-overlay="cart"] { overflow: hidden; }
   font-size: .9rem; font-weight: 800; letter-spacing: .01em;
   border-radius: var(--r);
   text-decoration: none;
-  box-shadow: 0 6px 18px -8px rgba(37,224,127,.4);
+  box-shadow: 0 6px 18px -8px rgba(52,211,153,.4);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 .hero-cta:hover { filter: brightness(1.06); transform: translateY(-1px); }
@@ -866,33 +932,20 @@ body[data-overlay="cart"] { overflow: hidden; }
    ============================================================ */
 .go-hero {
   position: relative;
-  overflow: hidden;
   text-align: center;
   display: flex; flex-direction: column; justify-content: center;
-  min-height: clamp(560px, 88vh, 860px);
+  min-height: clamp(540px, 86vh, 840px);
   padding: clamp(3rem, 7vw, 5rem) 1.2rem;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
+  /* Transparent — the fixed .zen-bg garden shows through */
+  background: transparent;
 }
-/* Live zen background — looping water video, covers the hero. */
-.go-video {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-@media (prefers-reduced-motion: reduce) {
-  .go-video { display: none; }   /* fall back to the flat dark bg */
-}
-/* Gentle scrim so the text reads over the moving water. */
+/* Soft pool behind the centred text only; the garden stays vivid around it */
 .go-hero::after {
   content: '';
   position: absolute; inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(58% 52% at 50% 52%, rgba(10,12,15,.42), transparent 78%),
-    linear-gradient(180deg, rgba(16,18,22,.28) 0%, rgba(16,18,22,.10) 40%, rgba(16,18,22,.62) 100%);
+  background: radial-gradient(56% 50% at 50% 52%, rgba(10,12,15,.38), transparent 76%);
 }
 .go-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .go-kicker {
@@ -989,7 +1042,7 @@ body[data-overlay="cart"] { overflow: hidden; }
   background: var(--grad);
   color: var(--accent-ink);
   border-color: transparent;
-  box-shadow: 0 2px 14px -3px rgba(37,224,127,.55);
+  box-shadow: 0 2px 14px -3px rgba(52,211,153,.55);
 }
 
 .search {
@@ -1053,8 +1106,10 @@ body[data-overlay="cart"] { overflow: hidden; }
 }
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(30,34,42,.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-line);
   border-radius: var(--r-lg);
   overflow: hidden;
   display: flex; flex-direction: column;
@@ -1214,13 +1269,13 @@ body[data-overlay="cart"] { overflow: hidden; }
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(37,224,127,.3), 0 0 0 1px rgba(37,224,127,.42);
+  box-shadow: 0 4px 16px rgba(52,211,153,.3), 0 0 0 1px rgba(52,211,153,.42);
   transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
 .shopify-slot .shopify-buy__btn:hover {
   background: var(--grad-hot);
   transform: translateY(-1px);
-  box-shadow: 0 9px 26px rgba(37,224,127,.5), 0 0 0 1px rgba(91,245,166,.6);
+  box-shadow: 0 9px 26px rgba(52,211,153,.5), 0 0 0 1px rgba(110,231,183,.6);
 }
 .shopify-slot .shopify-buy__btn:active { transform: translateY(0); }
 .shopify-slot .shopify-buy__btn[disabled],
@@ -1379,8 +1434,10 @@ html.zen-joined .promo { display: none; }
 
 .promo {
   position: relative;
-  background: var(--bg-2);
-  border-bottom: 1px solid var(--border);
+  background: rgba(16,19,23,.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-line);
   transition: opacity .35s ease, max-height .45s ease, padding .35s ease, border-color .35s ease;
 }
 .promo.is-dismissing {
@@ -1446,7 +1503,7 @@ html.zen-joined .promo { display: none; }
   letter-spacing: .01em;
   border-radius: var(--r);
   white-space: nowrap;
-  box-shadow: 0 2px 14px -2px rgba(37,224,127,.5);
+  box-shadow: 0 2px 14px -2px rgba(52,211,153,.5);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 .promo-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
@@ -1475,9 +1532,17 @@ html.zen-joined .promo { display: none; }
 /* HERO */
 .lend-hero {
   text-align: center;
-  padding: 2.4rem 1rem 2.8rem;
+  padding: 2.8rem 1rem 3rem;
   max-width: 720px;
   margin: 0 auto;
+}
+/* Service-page heroes sit directly on the live garden — halo the text */
+.lend-hero .lend-h1 { text-shadow: 0 2px 24px rgba(0,0,0,.85), 0 0 12px rgba(0,0,0,.6); }
+.lend-hero .lend-sub { text-shadow: 0 1px 14px rgba(0,0,0,.85); color: #dfe3e9; }
+.lend-hero .lend-tag {
+  background: rgba(10,12,15,.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 .lend-tag {
   display: inline-block;
@@ -1516,21 +1581,25 @@ html.zen-joined .promo { display: none; }
   letter-spacing: .01em;
   border-radius: var(--r);
   text-decoration: none;
-  box-shadow: 0 6px 20px -4px rgba(37,224,127,.5), 0 0 0 1px rgba(37,224,127,.42);
+  box-shadow: 0 6px 20px -4px rgba(52,211,153,.5), 0 0 0 1px rgba(52,211,153,.42);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
 .lend-cta:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px -6px rgba(37,224,127,.6), 0 0 0 1px rgba(91,245,166,.55);
+  box-shadow: 0 10px 28px -6px rgba(52,211,153,.6), 0 0 0 1px rgba(110,231,183,.55);
 }
 
 /* SECTION SHELL */
 .lend-section {
-  padding: 2.6rem 0;
-  border-top: 1px solid var(--border);
+  padding: 2.2rem clamp(1.2rem, 3vw, 2rem) 2.4rem;
   max-width: 880px;
-  margin: 0 auto;
+  margin: 0 auto 1.6rem;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--r-lg);
 }
 .lend-eyebrow {
   font-size: .66rem;
@@ -1564,8 +1633,8 @@ html.zen-joined .promo { display: none; }
 }
 .lend-card-l {
   padding: 1.35rem 1.4rem 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(36,40,50,.72);
+  border: 1px solid var(--glass-line);
   border-radius: var(--r-lg);
   transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
@@ -1706,13 +1775,13 @@ html.zen-joined .promo { display: none; }
   font-size: .9rem; font-weight: 800;
   letter-spacing: .01em;
   border-radius: var(--r);
-  box-shadow: 0 6px 18px -4px rgba(37,224,127,.5), 0 0 0 1px rgba(37,224,127,.4);
+  box-shadow: 0 6px 18px -4px rgba(52,211,153,.5), 0 0 0 1px rgba(52,211,153,.4);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
 .lend-submit:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 10px 26px -6px rgba(37,224,127,.6), 0 0 0 1px rgba(91,245,166,.55);
+  box-shadow: 0 10px 26px -6px rgba(52,211,153,.6), 0 0 0 1px rgba(110,231,183,.55);
 }
 .lend-submit:disabled { opacity: .55; cursor: default; transform: none; }
 .lend-msg {
@@ -1763,7 +1832,10 @@ html.zen-joined .promo { display: none; }
    9) FOOTER
    ============================================================ */
 .footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--glass-line);
+  background: rgba(13,15,18,.66);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 1.5rem 0;
 }
 .foot {

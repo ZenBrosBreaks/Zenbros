@@ -302,17 +302,18 @@
   wireServiceForm('shipForm', 'shipDone', 'shipMsg', 'shipSubmit', 'Send Inquiry →');
   wireServiceForm('contactForm', 'contactDone', 'contactMsg', 'contactSubmit', 'Send Message →');
 
-  // --- Keep the zen hero video playing ---
+  // --- Keep the zen background video playing ---
   // Low-power mode / aggressive tab suspension can pause muted autoplay
   // video; retry on tab return and on the first interaction.
   (function () {
-    var v = document.querySelector('.go-video');
+    var v = document.querySelector('.zen-bg video');
     if (!v) return;
     function nudge() {
       if (!v.paused) return;
       var p = v.play();
       if (p && p.catch) p.catch(function () {});
     }
+    nudge();
     document.addEventListener('visibilitychange', function () { if (!document.hidden) nudge(); });
     window.addEventListener('touchstart', nudge, { once: true, passive: true });
     window.addEventListener('click', nudge, { once: true });
