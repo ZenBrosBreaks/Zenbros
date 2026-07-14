@@ -306,12 +306,14 @@
   // Low-power mode / aggressive tab suspension can pause muted autoplay
   // video; retry on tab return and on the first interaction.
   (function () {
-    var v = document.querySelector('.zen-bg video');
-    if (!v) return;
+    var vids = document.querySelectorAll('.zen-bg video');
+    if (!vids.length) return;
     function nudge() {
-      if (!v.paused) return;
-      var p = v.play();
-      if (p && p.catch) p.catch(function () {});
+      vids.forEach(function (v) {
+        if (!v.paused) return;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      });
     }
     nudge();
     document.addEventListener('visibilitychange', function () { if (!document.hidden) nudge(); });

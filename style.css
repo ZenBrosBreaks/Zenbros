@@ -45,26 +45,26 @@ a { color: inherit; }
 
   /* Accent — garden palette pulled from the live zen background:
      matcha jade + sky blue, with sakura pink as the soft highlight. */
-  --accent:      #34d399;
-  --accent-2:    #6ee7b7;
+  --accent:      #2ee6a3;
+  --accent-2:    #7bf2c7;
   --accent-ink:  #06160e;
-  --accent-soft: rgba(52,211,153,.13);
-  --accent-line: rgba(110,231,183,.45);
-  --accent-cy:   #38bdf8;
-  --accent-cy-soft: rgba(56,189,248,.13);
+  --accent-soft: rgba(46,230,163,.13);
+  --accent-line: rgba(123,242,199,.45);
+  --accent-cy:   #45c6fa;
+  --accent-cy-soft: rgba(69,198,250,.13);
   --sakura:      #f7b6c8;
   --sakura-soft: rgba(247,182,200,.16);
-  --grad:        linear-gradient(120deg, #34d399 0%, #38bdf8 100%);
-  --grad-hot:    linear-gradient(120deg, #6ee7b7 0%, #7dd3fc 100%);
-  --glow:        0 12px 34px -10px rgba(52,211,153,.55);
+  --grad:        linear-gradient(120deg, #2ee6a3 0%, #45c6fa 100%);
+  --grad-hot:    linear-gradient(120deg, #7bf2c7 0%, #8fdcfd 100%);
+  --glow:        0 12px 34px -10px rgba(46,230,163,.55);
 
   /* Brush display face — the "Zen Bros" wordmark font, used for headings */
   --font-brush:  "Permanent Marker", "Inter", sans-serif;
 
   /* Glass panels floating over the live background */
-  --glass:       rgba(20, 23, 29, .72);
-  --glass-2:     rgba(26, 30, 37, .66);
-  --glass-line:  rgba(255, 255, 255, .09);
+  --glass:       rgba(19, 22, 28, .58);
+  --glass-2:     rgba(25, 29, 36, .5);
+  --glass-line:  rgba(255, 255, 255, .12);
 
   /* Status — colour earns attention only where it matters */
   --ok:        #2fe08a;
@@ -150,17 +150,29 @@ h1, h2,
   pointer-events: none;
 }
 .zen-bg video {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
 }
-/* Uniform tint so white text + glass panels read over the bright garden */
+/* Ambient layer — blurred cover copy that fills whatever the main
+   layer letterboxes, so no window shape ever shows hard edges. */
+.zen-bg-blur {
+  object-fit: cover;
+  filter: blur(30px) saturate(1.35) brightness(.92);
+  transform: scale(1.12);
+}
+/* Main layer — the WHOLE garden, never cropped, never "zoomed in" */
+.zen-bg-main {
+  object-fit: contain;
+  filter: saturate(1.14) brightness(1.05);
+}
+/* Light tint so white text + glass panels read over the bright garden */
 .zen-bg::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
-    rgba(14,16,19,.32) 0%,
-    rgba(14,16,19,.38) 55%,
-    rgba(14,16,19,.50) 100%);
+    rgba(14,16,19,.18) 0%,
+    rgba(14,16,19,.22) 55%,
+    rgba(14,16,19,.32) 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   .zen-bg { display: none; }
@@ -599,7 +611,7 @@ h1, h2,
   display: flex; align-items: center;
   gap: 1.1rem;
   padding: 1.3rem 1.5rem;
-  background: rgba(30,34,42,.85);
+  background: rgba(30,34,42,.72);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   text-decoration: none;
@@ -843,9 +855,9 @@ h1, h2,
   position: absolute; inset: -30% -10% -10%;
   pointer-events: none;
   background:
-    radial-gradient(46% 55% at 18% 8%,  rgba(52,211,153,.15), transparent 62%),
-    radial-gradient(44% 52% at 86% 12%, rgba(56,189,248,.12), transparent 62%),
-    radial-gradient(60% 65% at 50% 108%, rgba(110,231,183,.08), transparent 64%);
+    radial-gradient(46% 55% at 18% 8%,  rgba(46,230,163,.15), transparent 62%),
+    radial-gradient(44% 52% at 86% 12%, rgba(69,198,250,.12), transparent 62%),
+    radial-gradient(60% 65% at 50% 108%, rgba(123,242,199,.08), transparent 64%);
   filter: blur(8px);
 }
 /* faint grid texture over the glow */
@@ -881,7 +893,7 @@ h1, h2,
   background: var(--grad);
   -webkit-background-clip: text; background-clip: text;
   color: transparent;
-  text-shadow: 0 0 36px rgba(52,211,153,.35);
+  text-shadow: 0 0 36px rgba(46,230,163,.35);
 }
 .hero-sub {
   font-size: clamp(1rem, 1.5vw, 1.12rem);
@@ -902,7 +914,7 @@ h1, h2,
   font-size: .9rem; font-weight: 800; letter-spacing: .01em;
   border-radius: var(--r);
   text-decoration: none;
-  box-shadow: 0 6px 18px -8px rgba(52,211,153,.4);
+  box-shadow: 0 6px 18px -8px rgba(46,230,163,.4);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 .hero-cta:hover { filter: brightness(1.06); transform: translateY(-1px); }
@@ -945,7 +957,7 @@ h1, h2,
   position: absolute; inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(56% 50% at 50% 52%, rgba(10,12,15,.38), transparent 76%);
+  background: radial-gradient(56% 50% at 50% 52%, rgba(10,12,15,.30), transparent 76%);
 }
 .go-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .go-kicker {
@@ -955,7 +967,7 @@ h1, h2,
   font-size: .68rem; font-weight: 700;
   letter-spacing: .26em; text-transform: uppercase;
   color: var(--accent-2);
-  background: rgba(10,12,15,.5);
+  background: rgba(10,12,15,.42);
   border: 1px solid var(--accent-line);
   border-radius: 999px;
 }
@@ -987,7 +999,7 @@ h1, h2,
   padding: .5rem 1.05rem;
   font-size: .85rem; font-weight: 700; letter-spacing: .01em;
   color: var(--text);
-  background: rgba(12,17,14,.55);
+  background: rgba(12,17,14,.45);
   border: 1px solid var(--accent-line);
   border-radius: 999px;
 }
@@ -1042,7 +1054,7 @@ h1, h2,
   background: var(--grad);
   color: var(--accent-ink);
   border-color: transparent;
-  box-shadow: 0 2px 14px -3px rgba(52,211,153,.55);
+  box-shadow: 0 2px 14px -3px rgba(46,230,163,.55);
 }
 
 .search {
@@ -1106,7 +1118,7 @@ h1, h2,
 }
 
 .card {
-  background: rgba(30,34,42,.82);
+  background: rgba(30,34,42,.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--glass-line);
@@ -1269,13 +1281,13 @@ h1, h2,
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(52,211,153,.3), 0 0 0 1px rgba(52,211,153,.42);
+  box-shadow: 0 4px 16px rgba(46,230,163,.3), 0 0 0 1px rgba(46,230,163,.42);
   transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
 .shopify-slot .shopify-buy__btn:hover {
   background: var(--grad-hot);
   transform: translateY(-1px);
-  box-shadow: 0 9px 26px rgba(52,211,153,.5), 0 0 0 1px rgba(110,231,183,.6);
+  box-shadow: 0 9px 26px rgba(46,230,163,.5), 0 0 0 1px rgba(123,242,199,.6);
 }
 .shopify-slot .shopify-buy__btn:active { transform: translateY(0); }
 .shopify-slot .shopify-buy__btn[disabled],
@@ -1434,7 +1446,7 @@ html.zen-joined .promo { display: none; }
 
 .promo {
   position: relative;
-  background: rgba(16,19,23,.72);
+  background: rgba(16,19,23,.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-line);
@@ -1503,7 +1515,7 @@ html.zen-joined .promo { display: none; }
   letter-spacing: .01em;
   border-radius: var(--r);
   white-space: nowrap;
-  box-shadow: 0 2px 14px -2px rgba(52,211,153,.5);
+  box-shadow: 0 2px 14px -2px rgba(46,230,163,.5);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 .promo-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
@@ -1540,7 +1552,7 @@ html.zen-joined .promo { display: none; }
 .lend-hero .lend-h1 { text-shadow: 0 2px 24px rgba(0,0,0,.85), 0 0 12px rgba(0,0,0,.6); }
 .lend-hero .lend-sub { text-shadow: 0 1px 14px rgba(0,0,0,.85); color: #dfe3e9; }
 .lend-hero .lend-tag {
-  background: rgba(10,12,15,.5);
+  background: rgba(10,12,15,.42);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
@@ -1581,13 +1593,13 @@ html.zen-joined .promo { display: none; }
   letter-spacing: .01em;
   border-radius: var(--r);
   text-decoration: none;
-  box-shadow: 0 6px 20px -4px rgba(52,211,153,.5), 0 0 0 1px rgba(52,211,153,.42);
+  box-shadow: 0 6px 20px -4px rgba(46,230,163,.5), 0 0 0 1px rgba(46,230,163,.42);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
 .lend-cta:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px -6px rgba(52,211,153,.6), 0 0 0 1px rgba(110,231,183,.55);
+  box-shadow: 0 10px 28px -6px rgba(46,230,163,.6), 0 0 0 1px rgba(123,242,199,.55);
 }
 
 /* SECTION SHELL */
@@ -1633,7 +1645,7 @@ html.zen-joined .promo { display: none; }
 }
 .lend-card-l {
   padding: 1.35rem 1.4rem 1.5rem;
-  background: rgba(36,40,50,.72);
+  background: rgba(36,40,50,.6);
   border: 1px solid var(--glass-line);
   border-radius: var(--r-lg);
   transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
@@ -1775,13 +1787,13 @@ html.zen-joined .promo { display: none; }
   font-size: .9rem; font-weight: 800;
   letter-spacing: .01em;
   border-radius: var(--r);
-  box-shadow: 0 6px 18px -4px rgba(52,211,153,.5), 0 0 0 1px rgba(52,211,153,.4);
+  box-shadow: 0 6px 18px -4px rgba(46,230,163,.5), 0 0 0 1px rgba(46,230,163,.4);
   transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
 .lend-submit:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 10px 26px -6px rgba(52,211,153,.6), 0 0 0 1px rgba(110,231,183,.55);
+  box-shadow: 0 10px 26px -6px rgba(46,230,163,.6), 0 0 0 1px rgba(123,242,199,.55);
 }
 .lend-submit:disabled { opacity: .55; cursor: default; transform: none; }
 .lend-msg {
@@ -1833,7 +1845,7 @@ html.zen-joined .promo { display: none; }
    ============================================================ */
 .footer {
   border-top: 1px solid var(--glass-line);
-  background: rgba(13,15,18,.66);
+  background: linear-gradient(180deg, rgba(46,230,163,.05), rgba(69,198,250,.03)), rgba(16,20,25,.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 1.5rem 0;
@@ -1842,7 +1854,7 @@ html.zen-joined .promo { display: none; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem;
   font-size: .76rem;
-  color: var(--text-3);
+  color: var(--text-2);
   letter-spacing: .03em;
 }
 .foot span:first-child {
