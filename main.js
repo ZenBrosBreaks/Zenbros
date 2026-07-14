@@ -82,6 +82,17 @@
   (function () {
     var vids = document.querySelectorAll('.zen-bg video');
     if (!vids.length) return;
+    // The video is opacity:0 until it actually plays (see style.css) —
+    // when autoplay is blocked, the static poster shows instead of the
+    // browser's native play glyph. Toggle the class off the real
+    // playback state so the two never disagree.
+    vids.forEach(function (v) {
+      var wrap = v.closest('.zen-bg');
+      if (!wrap) return;
+      v.addEventListener('playing', function () { wrap.classList.add('is-playing'); });
+      v.addEventListener('pause', function () { wrap.classList.remove('is-playing'); });
+      if (!v.paused && !v.ended) wrap.classList.add('is-playing');
+    });
     function nudge() {
       vids.forEach(function (v) {
         // Re-assert inline/muted via properties — the HTML attributes

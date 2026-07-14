@@ -167,7 +167,10 @@ h1, h2 {
   position: fixed; inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: var(--bg);
+  /* Static first frame of the loop — shown whenever the video isn't
+     playing (Low Power Mode, Data Saver, slow load). Same cover/68%
+     framing as the video so the swap is invisible. */
+  background: var(--bg) url('images/zen-bg-poster.jpg') 50% 68% / cover no-repeat;
 }
 .zen-bg video {
   position: absolute; inset: 0;
@@ -177,9 +180,15 @@ h1, h2 {
   object-fit: cover;
   object-position: 50% 68%;
   filter: saturate(1.12) brightness(1.04);
+  /* Hidden until it's actually playing (main.js adds .is-playing).
+     Newer iOS paints its blocked-autoplay glyph in a closed shadow
+     DOM that CSS can't reach — so when playback is blocked we show
+     the poster instead of the video, and the glyph never appears. */
+  opacity: 0;
+  transition: opacity .4s ease;
 }
-/* iOS Low Power Mode blocks autoplay and paints a native play glyph
-   over the video — hide it; this layer is decorative background. */
+.zen-bg.is-playing video { opacity: 1; }
+/* Older iOS: hide the native play glyph directly (belt and braces). */
 .zen-bg video::-webkit-media-controls,
 .zen-bg video::-webkit-media-controls-start-playback-button {
   display: none !important;
