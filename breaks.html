@@ -12,7 +12,7 @@
   <meta property="og:image" content="images/og-image.png" />
   <meta property="og:url" content="https://www.zenbrosbreaks.com/breaks.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#181b21" />
+  <meta name="theme-color" content="#14171c" />
 
   <link rel="canonical" href="https://www.zenbrosbreaks.com/breaks.html" />
   <link rel="icon" type="image/png" href="images/logo-sm.png" />
@@ -27,7 +27,7 @@
 
 <a href="#main" class="skip">Skip to content</a>
 
-<!-- Live zen background -- fixed behind the whole page -->
+<!-- Live zen background — fixed behind the whole page -->
 <div class="zen-bg" aria-hidden="true">
   <video class="zen-bg-blur" autoplay muted loop playsinline preload="auto" tabindex="-1">
     <source src="images/zen-bg.mp4" type="video/mp4" />
@@ -38,18 +38,18 @@
 </div>
 
 <!-- ============================================================
-     PROMO BANNER — first-order discount, email signup
+     PROMO — email list
      ============================================================ -->
-<aside class="promo" aria-label="First-order discount">
+<aside class="promo" aria-label="Email list">
   <div class="wrap promo-row">
-    <p class="promo-text"><strong>10% off your first break.</strong> Join the list &mdash; we&rsquo;ll email your code.</p>
+    <p class="promo-text"><strong>Grand opening Aug 1.</strong> Join the list &mdash; 10% off your first break.</p>
     <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="promo-form" id="joinForm">
       <input type="hidden" name="form-name" value="newsletter" />
       <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
       <input type="email" name="email" id="joinEmail" required placeholder="you@email.com" aria-label="Email address" autocomplete="email" />
-      <button type="submit" class="promo-btn" id="joinBtn">Get my code</button>
+      <button type="submit" class="promo-btn" id="joinBtn">Join</button>
     </form>
-    <p class="promo-done" id="joinDone" role="status" aria-live="polite" hidden>&check; Sent &mdash; check your inbox.</p>
+    <p class="promo-done" id="joinDone" role="status" aria-live="polite" hidden>&check; You&rsquo;re in &mdash; check your inbox.</p>
   </div>
   <button type="button" class="promo-close" id="joinClose" aria-label="Dismiss">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -62,27 +62,16 @@
 <header class="nav" id="nav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand" aria-label="Zen Bros Breaks home">
-      <img src="images/logo-sm.png" alt="" width="60" height="60" />
+      <img src="images/logo-sm.png" alt="" width="52" height="52" />
       <span class="brand-text"><em>Zen Bros</em><small>Breaks</small></span>
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="breaks.html" class="active">
-        <span>Breaks</span>
-        <span class="nav-link-sub">Live spots</span>
-      </a>
-      <a href="lending.html">
-        <span>Lending</span>
-        <span class="nav-link-sub">Financing</span>
-      </a>
-      <a href="shipping.html">
-        <span>Shipping</span>
-        <span class="nav-link-sub">Pack &amp; ship</span>
-      </a>
-      <a href="contact.html">
-        <span>Contact</span>
-        <span class="nav-link-sub">Get in touch</span>
-      </a>
+      <a href="index.html">Home</a>
+      <a href="breaks.html" class="active">Breaks</a>
+      <a href="lending.html">Lending</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="contact.html">Contact</a>
       <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="nav-link-live">
         <span class="dot"></span> Live
       </a>
@@ -105,41 +94,43 @@
 </header>
 
 <!-- ============================================================
-     MOBILE DRAWER (used on all viewport sizes; nav stays minimal)
+     DRAWER
      ============================================================ -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <header class="drawer-head">
     <a href="index.html" class="drawer-brand" aria-label="Zen Bros Breaks home">
-      <img src="images/logo-sm.png" alt="" width="36" height="36" />
+      <img src="images/logo-sm.png" alt="" width="34" height="34" />
       <span class="drawer-brand-text"><em>Zen Bros</em><small>Breaks</small></span>
     </a>
     <button id="drawerClose" class="drawer-close" type="button" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-        <path d="M6 6l12 12M18 6L6 18"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </header>
 
   <nav class="drawer-nav" aria-label="Menu">
+    <a href="index.html">
+      <span class="drawer-label">Home</span>
+      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
+    </a>
     <a href="breaks.html" class="active">
       <span class="drawer-label">Breaks</span>
-      <span class="drawer-arrow" aria-hidden="true">→</span>
+      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
     <a href="lending.html">
       <span class="drawer-label">Lending</span>
-      <span class="drawer-arrow" aria-hidden="true">→</span>
+      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
     <a href="shipping.html">
       <span class="drawer-label">Shipping</span>
-      <span class="drawer-arrow" aria-hidden="true">→</span>
+      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
     <a href="contact.html">
       <span class="drawer-label">Contact</span>
-      <span class="drawer-arrow" aria-hidden="true">→</span>
+      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
     <button id="drawerCart" class="drawer-link" type="button">
       <span class="drawer-label">Cart</span>
-      <span id="drawerCartCount" class="drawer-arrow drawer-cart-count" aria-hidden="true">→</span>
+      <span id="drawerCartCount" class="drawer-arrow drawer-cart-count" aria-hidden="true">&rarr;</span>
     </button>
   </nav>
 
@@ -165,128 +156,121 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         <span>Instagram</span>
       </a>
+      <a href="https://www.tiktok.com/@zenbrosbreaks" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.45a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.88z"/></svg>
+        <span>TikTok</span>
+      </a>
     </div>
   </footer>
 </aside>
 
-<!-- One unified scrim — drives both drawer & cart visibility -->
 <div id="scrim" class="scrim" aria-hidden="true"></div>
 
 <!-- ============================================================
-     HERO — vibrant gradient-mesh banner
-     ============================================================ -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <span class="hero-kicker"><span class="dot"></span> New breaks every week</span>
-    <h1 class="hero-title">Get a spot, <span class="hero-grad">we rip it live.</span></h1>
-    <p class="hero-sub">Grab your spot before we go live, then watch the boxes get opened on YouTube and Whatnot. Whatever lands on your spot is yours, and we ship it straight to you.</p>
-    <div class="hero-cta-row">
-      <a href="#breaks" class="hero-cta">See this week&rsquo;s breaks &darr;</a>
-      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="hero-cta-ghost">Watch live <span class="dot"></span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     MAIN — Breaks grid
+     MAIN — Breaks
      ============================================================ -->
 <main id="main" class="main">
-  <div class="wrap">
 
-    <div class="filter-row" id="breaks" role="region" aria-label="Filter breaks">
-      <div class="filters" role="tablist" aria-label="Sport filters">
-        <button type="button" class="chip active" data-filter="all">All</button>
-        <button type="button" class="chip" data-filter="stranger-things">Stranger Things</button>
-      </div>
-      <div class="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
-        </svg>
-        <input id="searchInput" type="search" placeholder="Search breaks…" aria-label="Search breaks" autocomplete="off" />
-      </div>
+  <section class="page-hero">
+    <span class="pill"><span class="dot"></span> New breaks every week</span>
+    <h1>Get a spot, we rip it live.</h1>
+    <p>Grab your spot before we go live, then watch the boxes get opened on YouTube and Whatnot. Whatever lands on your spot is yours, and we ship it straight to you.</p>
+  </section>
+
+  <div class="filter-row" role="region" aria-label="Filter breaks">
+    <div class="filters" role="tablist" aria-label="Category filters">
+      <button type="button" class="chip active" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="stranger-things">Stranger Things</button>
     </div>
-
-    <p class="filter-empty" id="filterEmpty" hidden>No breaks match that filter.</p>
-
-    <div class="grid">
-
-      <!-- ============================================================
-           BREAK · STRANGER THINGS
-           ============================================================ -->
-      <article class="card" data-cat="stranger-things">
-        <div class="card-art art-image">
-          <img src="images/stranger-things.png" alt="Stranger Things 3 Box Hobby Break" loading="lazy" />
-        </div>
-        <div class="card-body">
-          <span class="card-tag">Stranger Things</span>
-          <h3>Stranger Things — 3-Box Hobby</h3>
-          <span class="card-date" data-datetime="2026-06-27T17:00:00-07:00">SAT · JUN 27 · 5:00 PM PT</span>
-          <p class="card-desc">Topps Hobby · Randomized</p>
-          <span class="spots" data-product-spots="8417932083387" data-spots-max="10">10 spots remaining</span>
-
-          <details class="card-details">
-            <summary>How it works &amp; spot board <span class="chev" aria-hidden="true"></span></summary>
-            <div class="card-details-body">
-              <p>There are <strong>10 total spots</strong> in this 3x Stranger Things Hobby box break. After all spots sell, we will randomize the spot list live before the rip. Whatever spot you land, you get all cards pulled from the boxes for every character, episode, creature, or theme listed in that spot.</p>
-              <p><em>Example:</em> If you land the Eddie + Hellfire Club spot, you get all Eddie cards, all Hellfire Club cards, and every other card listed under that full spot.</p>
-              <p>All cards ship.</p>
-              <p class="spot-board-label">Spot Board · 10 Spots</p>
-              <p class="spot-board-note">Each numbered spot below is one bundle. Land a spot and you get every character, episode, creature, and theme listed in it.</p>
-              <ul class="spot-board grouped">
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>01</strong></div>
-                  <p class="spot-items">Eleven · The Nina Project · The Monster and the Superhero · Papa</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>02</strong></div>
-                  <p class="spot-items">Vecna · Vecna&rsquo;s Curse · The Massacre at Hawkins Lab · Henry Creel</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>03</strong></div>
-                  <p class="spot-items">Eddie · The Hellfire Club · Chrissy · Dear Billy</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>04</strong></div>
-                  <p class="spot-items">Steve · Robin · Nancy · The Dive · The Mall Rats</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>05</strong></div>
-                  <p class="spot-items">Dustin · Suzie, Do You Copy · Dig Dug / The Spy · The Flea and the Acrobat / The Bathtub</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>06</strong></div>
-                  <p class="spot-items">Hopper · Dr. Brenner · Dr. Kay · The Body · The Gate</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>07</strong></div>
-                  <p class="spot-items">Max · Madmax · Billy · The Bite · The Sauna Test</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>08</strong></div>
-                  <p class="spot-items">Mike · Will · Will the Wise · The Vanishing of Will Byers · The Weirdo on Maple Street</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>09</strong></div>
-                  <p class="spot-items">Lucas · Erica · Jonathan · Karen · Holly · Holly, Jolly</p>
-                </li>
-                <li>
-                  <div class="spot-head"><span class="spot-num">SPOT</span><strong>10</strong></div>
-                  <p class="spot-items">Argyle · Derek · Murray · Demobat · Demogorgon · The Mind Flayer · The Monster · The Flayed · The Battle of Starcourt · E Pluribus Unum · The Case of the Missing Lifeguard · The Lost Sister · The Piggyback · The Upside Down · Trick or Treat, Freak / The Pollywog</p>
-                </li>
-              </ul>
-            </div>
-          </details>
-
-          <div class="card-foot">
-            <span class="price">$149.99</span>
-            <div class="shopify-slot" data-shopify-product="8417932083387"></div>
-          </div>
-        </div>
-      </article>
-
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+      </svg>
+      <input id="searchInput" type="search" placeholder="Search breaks…" aria-label="Search breaks" autocomplete="off" />
     </div>
   </div>
+
+  <p class="filter-empty" id="filterEmpty" hidden>No breaks match that filter.</p>
+
+  <div class="grid">
+
+    <!-- ============================================================
+         BREAK · STRANGER THINGS
+         To edit: card-date, .price, and the Shopify product ID.
+         ============================================================ -->
+    <article class="card" data-cat="stranger-things">
+      <div class="card-art">
+        <img src="images/stranger-things.png" alt="Stranger Things 3 Box Hobby Break" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Stranger Things</span>
+        <h3>Stranger Things — 3-Box Hobby</h3>
+        <span class="card-date" data-datetime="2026-06-27T17:00:00-07:00">SAT · JUN 27 · 5:00 PM PT</span>
+        <p class="card-desc">Topps Hobby · Randomized</p>
+        <span class="spots" data-product-spots="8417932083387" data-spots-max="10">10 spots remaining</span>
+
+        <details class="card-details">
+          <summary>How it works &amp; spot board <span class="chev" aria-hidden="true"></span></summary>
+          <div class="card-details-body">
+            <p>There are <strong>10 total spots</strong> in this 3x Stranger Things Hobby box break. After all spots sell, we will randomize the spot list live before the rip. Whatever spot you land, you get all cards pulled from the boxes for every character, episode, creature, or theme listed in that spot.</p>
+            <p><em>Example:</em> If you land the Eddie + Hellfire Club spot, you get all Eddie cards, all Hellfire Club cards, and every other card listed under that full spot.</p>
+            <p>All cards ship.</p>
+            <p class="spot-board-label">Spot Board · 10 Spots</p>
+            <p class="spot-board-note">Each numbered spot below is one bundle. Land a spot and you get every character, episode, creature, and theme listed in it.</p>
+            <ul class="spot-board grouped">
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>01</strong></div>
+                <p class="spot-items">Eleven · The Nina Project · The Monster and the Superhero · Papa</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>02</strong></div>
+                <p class="spot-items">Vecna · Vecna&rsquo;s Curse · The Massacre at Hawkins Lab · Henry Creel</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>03</strong></div>
+                <p class="spot-items">Eddie · The Hellfire Club · Chrissy · Dear Billy</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>04</strong></div>
+                <p class="spot-items">Steve · Robin · Nancy · The Dive · The Mall Rats</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>05</strong></div>
+                <p class="spot-items">Dustin · Suzie, Do You Copy · Dig Dug / The Spy · The Flea and the Acrobat / The Bathtub</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>06</strong></div>
+                <p class="spot-items">Hopper · Dr. Brenner · Dr. Kay · The Body · The Gate</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>07</strong></div>
+                <p class="spot-items">Max · Madmax · Billy · The Bite · The Sauna Test</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>08</strong></div>
+                <p class="spot-items">Mike · Will · Will the Wise · The Vanishing of Will Byers · The Weirdo on Maple Street</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>09</strong></div>
+                <p class="spot-items">Lucas · Erica · Jonathan · Karen · Holly · Holly, Jolly</p>
+              </li>
+              <li>
+                <div class="spot-head"><span class="spot-num">SPOT</span><strong>10</strong></div>
+                <p class="spot-items">Argyle · Derek · Murray · Demobat · Demogorgon · The Mind Flayer · The Monster · The Flayed · The Battle of Starcourt · E Pluribus Unum · The Case of the Missing Lifeguard · The Lost Sister · The Piggyback · The Upside Down · Trick or Treat, Freak / The Pollywog</p>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="card-foot">
+          <span class="price">$149.99</span>
+          <div class="shopify-slot" data-shopify-product="8417932083387"></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
 </main>
 
 <!-- ============================================================
@@ -294,8 +278,14 @@
      ============================================================ -->
 <footer class="footer">
   <div class="wrap foot">
-    <span>ZB</span>
-    <span>© <span id="year">2026</span> Zen Bros Breaks</span>
+    <span class="foot-brand">Zen Bros</span>
+    <nav class="foot-links" aria-label="Channels">
+      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener">Whatnot</a>
+      <a href="https://www.youtube.com/@ZenBrosBreaks" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/zenbrosbreaks/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@zenbrosbreaks" target="_blank" rel="noopener">TikTok</a>
+    </nav>
+    <span>&copy; <span id="year">2026</span> Zen Bros Breaks</span>
   </div>
 </footer>
 

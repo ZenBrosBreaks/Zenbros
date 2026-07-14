@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Zen Bros Breaks</title>
-  <meta name="description" content="Reach out to Zen Bros Breaks. Live on Whatnot, YouTube, Instagram, TikTok &mdash; or drop us a message directly." />
+  <title>Contact &mdash; Zen Bros Breaks</title>
+  <meta name="description" content="Reach out to Zen Bros Breaks. Live on Whatnot, YouTube, Instagram, TikTok, or visit the shop in Moraga, CA." />
 
-  <meta property="og:title" content="Contact — Zen Bros Breaks" />
-  <meta property="og:description" content="Reach out. Whatnot, YouTube, Instagram, TikTok, or send a message." />
+  <meta property="og:title" content="Contact &mdash; Zen Bros Breaks" />
+  <meta property="og:description" content="Reach out. Whatnot, YouTube, Instagram, TikTok, or visit the shop in Moraga." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.png" />
   <meta property="og:url" content="https://www.zenbrosbreaks.com/contact.html" />
-  <meta name="theme-color" content="#181b21" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#14171c" />
 
   <link rel="canonical" href="https://www.zenbrosbreaks.com/contact.html" />
   <link rel="icon" type="image/png" href="images/logo-sm.png" />
@@ -25,7 +26,8 @@
 
 <a href="#main" class="skip">Skip to content</a>
 
-<!-- Live zen background -- fixed behind the whole page -->
+
+<!-- Live zen background — fixed behind the whole page -->
 <div class="zen-bg" aria-hidden="true">
   <video class="zen-bg-blur" autoplay muted loop playsinline preload="auto" tabindex="-1">
     <source src="images/zen-bg.mp4" type="video/mp4" />
@@ -36,48 +38,40 @@
 </div>
 
 <!-- ============================================================
-     PROMO BANNER — first-order discount, email signup
+     PROMO — email list
      ============================================================ -->
-<aside class="promo" aria-label="First-order discount">
+<aside class="promo" aria-label="Email list">
   <div class="wrap promo-row">
-    <p class="promo-text"><strong>10% off your first break.</strong> Join the list &mdash; we&rsquo;ll email your code.</p>
+    <p class="promo-text"><strong>Grand opening Aug 1.</strong> Join the list &mdash; 10% off your first break.</p>
     <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="promo-form" id="joinForm">
       <input type="hidden" name="form-name" value="newsletter" />
       <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
       <input type="email" name="email" id="joinEmail" required placeholder="you@email.com" aria-label="Email address" autocomplete="email" />
-      <button type="submit" class="promo-btn" id="joinBtn">Get my code</button>
+      <button type="submit" class="promo-btn" id="joinBtn">Join</button>
     </form>
-    <p class="promo-done" id="joinDone" role="status" aria-live="polite" hidden>&check; Sent &mdash; check your inbox.</p>
+    <p class="promo-done" id="joinDone" role="status" aria-live="polite" hidden>&check; You&rsquo;re in &mdash; check your inbox.</p>
   </div>
   <button type="button" class="promo-close" id="joinClose" aria-label="Dismiss">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
 </aside>
 
+<!-- ============================================================
+     NAV
+     ============================================================ -->
 <header class="nav" id="nav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand" aria-label="Zen Bros Breaks home">
-      <img src="images/logo-sm.png" alt="" width="60" height="60" />
+      <img src="images/logo-sm.png" alt="" width="52" height="52" />
       <span class="brand-text"><em>Zen Bros</em><small>Breaks</small></span>
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="breaks.html">
-        <span>Breaks</span>
-        <span class="nav-link-sub">Live spots</span>
-      </a>
-      <a href="lending.html">
-        <span>Lending</span>
-        <span class="nav-link-sub">Financing</span>
-      </a>
-      <a href="shipping.html">
-        <span>Shipping</span>
-        <span class="nav-link-sub">Pack &amp; ship</span>
-      </a>
-      <a href="contact.html" class="active">
-        <span>Contact</span>
-        <span class="nav-link-sub">Get in touch</span>
-      </a>
+      <a href="index.html">Home</a>
+      <a href="breaks.html">Breaks</a>
+      <a href="lending.html">Lending</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="contact.html" class="active">Contact</a>
       <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="nav-link-live">
         <span class="dot"></span> Live
       </a>
@@ -99,20 +93,25 @@
   </div>
 </header>
 
+<!-- ============================================================
+     DRAWER
+     ============================================================ -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <header class="drawer-head">
     <a href="index.html" class="drawer-brand" aria-label="Zen Bros Breaks home">
-      <img src="images/logo-sm.png" alt="" width="36" height="36" />
+      <img src="images/logo-sm.png" alt="" width="34" height="34" />
       <span class="drawer-brand-text"><em>Zen Bros</em><small>Breaks</small></span>
     </a>
     <button id="drawerClose" class="drawer-close" type="button" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-        <path d="M6 6l12 12M18 6L6 18"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </header>
 
   <nav class="drawer-nav" aria-label="Menu">
+    <a href="index.html">
+      <span class="drawer-label">Home</span>
+      <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
+    </a>
     <a href="breaks.html">
       <span class="drawer-label">Breaks</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
@@ -157,6 +156,10 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         <span>Instagram</span>
       </a>
+      <a href="https://www.tiktok.com/@zenbrosbreaks" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.45a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.88z"/></svg>
+        <span>TikTok</span>
+      </a>
     </div>
   </footer>
 </aside>
@@ -164,15 +167,19 @@
 <div id="scrim" class="scrim" aria-hidden="true"></div>
 
 <!-- ============================================================
-     MAIN — Contact
+     MAIN - Contact
      ============================================================ -->
 <main id="main" class="main">
-  <div class="wrap about">
 
+  <section class="page-hero">
+    <span class="pill">Contact</span>
     <h1>Get in touch.</h1>
     <p>Got a question about a break, financing, shipping, whatever? Hit us up on any of these, or send a message below and we&rsquo;ll get back to you within a day.</p>
+  </section>
 
-    <!-- Channels (Whatnot / YouTube / Instagram / TikTok) -->
+  <section class="panel">
+    <p class="eyebrow">Channels</p>
+    <h2>Find us everywhere.</h2>
     <div class="channels">
       <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="ch">
         <span class="ch-icon" aria-hidden="true">
@@ -215,80 +222,84 @@
         <span class="ch-arrow">&rarr;</span>
       </a>
     </div>
+  </section>
 
-    <!-- ============================================================
-         STOREFRONT / LOCATION
-         ============================================================ -->
-    <section class="lend-section" id="visit">
-      <p class="lend-eyebrow">Visit the shop</p>
-      <h2 class="lend-h2">Find us in Moraga.</h2>
-      <p class="lend-section-sub">We&rsquo;re right next to the Rheem Theatre in the Rheem Valley Shopping Center. Come say hey.</p>
+  <section class="panel" id="visit">
+    <p class="eyebrow">Visit the shop</p>
+    <h2>Find us in Moraga.</h2>
+    <p class="panel-sub">We&rsquo;re right next to the Rheem Theatre in the Rheem Valley Shopping Center. Come say hey.</p>
 
-      <a class="storefront" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">
-        <span class="storefront-pin" aria-hidden="true">
-          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </span>
-        <span class="storefront-text">
-          <span class="storefront-label">Zen Bros Breaks</span>
-          <span class="storefront-addr">354 Park St, Moraga, CA 94556</span>
-          <span class="storefront-land">Right next to the Rheem Theatre</span>
-        </span>
-        <span class="storefront-cta">Get directions &rarr;</span>
-      </a>
+    <a class="place" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">
+      <span class="place-pin" aria-hidden="true">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </span>
+      <span class="place-text">
+        <span class="place-label">Zen Bros Breaks</span>
+        <span class="place-addr">354 Park St, Moraga, CA 94556</span>
+        <span class="place-land">Next to the Rheem Theatre</span>
+      </span>
+      <span class="place-cta">Get directions &rarr;</span>
+    </a>
 
-      <p style="margin-top:1rem;font-size:.9rem;color:var(--text-2);">
-        See the shop &amp; grand opening on <a href="index.html" style="color:var(--accent-2);font-weight:600;text-decoration:none;">the home page &rarr;</a>
-      </p>
-    </section>
+    <div class="map">
+      <iframe
+        src="https://maps.google.com/maps?q=354%20Park%20St%2C%20Moraga%2C%20CA%2094556&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        title="Map to Zen Bros Breaks, 354 Park St, Moraga, CA"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
 
-    <!-- ============================================================
-         CONTACT FORM
-         ============================================================ -->
-    <section class="lend-section" id="message">
-      <p class="lend-eyebrow">Send a message</p>
-      <h2 class="lend-h2">Say hey.</h2>
-      <p class="lend-section-sub">Anything else &mdash; partnerships, press, support, or just saying what&rsquo;s up. We&rsquo;ll get back within a day.</p>
+  <section class="panel" id="message">
+    <p class="eyebrow">Send a message</p>
+    <h2>Say hey.</h2>
+    <p class="panel-sub">Anything else &mdash; partnerships, press, support, or just saying what&rsquo;s up. We&rsquo;ll get back within a day.</p>
 
-      <form name="general-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="lend-form" id="contactForm">
-        <input type="hidden" name="form-name" value="general-inquiry" />
-        <p class="promo-hp" aria-hidden="true">
-          <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-        </p>
+    <form name="general-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" id="contactForm">
+      <input type="hidden" name="form-name" value="general-inquiry" />
+      <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
-        <div class="lend-field">
-          <label for="contactName">Name</label>
-          <input type="text" id="contactName" name="name" required autocomplete="name" />
-        </div>
-
-        <div class="lend-field">
-          <label for="contactEmail">Email</label>
-          <input type="email" id="contactEmail" name="email" required autocomplete="email" />
-        </div>
-
-        <div class="lend-field">
-          <label for="contactMessage">Message</label>
-          <textarea id="contactMessage" name="message" rows="5" required placeholder="What&rsquo;s on your mind?"></textarea>
-        </div>
-
-        <button type="submit" class="lend-submit" id="contactSubmit">Send Message &rarr;</button>
-        <p class="lend-msg" id="contactMsg" role="status" aria-live="polite"></p>
-      </form>
-
-      <div class="lend-done" id="contactDone" hidden role="status" aria-live="polite">
-        <p class="lend-done-title">&check; Got it.</p>
-        <p>We&rsquo;ll be in touch shortly.</p>
+      <div class="field">
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" name="name" required autocomplete="name" />
       </div>
-    </section>
+      <div class="field">
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" rows="5" required placeholder="What&rsquo;s on your mind?"></textarea>
+      </div>
 
-  </div>
+      <button type="submit" class="btn" id="contactSubmit">Send Message &rarr;</button>
+      <p class="msg" id="contactMsg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="done" id="contactDone" hidden role="status" aria-live="polite">
+      <p class="done-title">Got it.</p>
+      <p>We&rsquo;ll be in touch shortly.</p>
+    </div>
+  </section>
+
 </main>
 
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="footer">
   <div class="wrap foot">
-    <span>ZB</span>
+    <span class="foot-brand">Zen Bros</span>
+    <nav class="foot-links" aria-label="Channels">
+      <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener">Whatnot</a>
+      <a href="https://www.youtube.com/@ZenBrosBreaks" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/zenbrosbreaks/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@zenbrosbreaks" target="_blank" rel="noopener">TikTok</a>
+    </nav>
     <span>&copy; <span id="year">2026</span> Zen Bros Breaks</span>
   </div>
 </footer>
