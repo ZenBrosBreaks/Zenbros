@@ -84,15 +84,26 @@
     if (!vids.length) return;
     function nudge() {
       vids.forEach(function (v) {
+        // Re-assert inline/muted via properties — the HTML attributes
+        // alone aren't always honoured by WebKit, and without them
+        // iOS refuses the play() call.
+        v.muted = true;
+        v.playsInline = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('playsinline', '');
         if (!v.paused) return;
         var p = v.play();
         if (p && p.catch) p.catch(function () {});
       });
     }
     nudge();
+    window.addEventListener('pageshow', nudge);
     document.addEventListener('visibilitychange', function () { if (!document.hidden) nudge(); });
-    window.addEventListener('touchstart', nudge, { once: true, passive: true });
-    window.addEventListener('click', nudge, { once: true });
+    // Low Power Mode blocks autoplay until a user gesture — keep
+    // retrying on the first few interactions instead of just one.
+    ['touchstart', 'touchend', 'click', 'scroll'].forEach(function (evt) {
+      window.addEventListener(evt, nudge, { passive: true });
+    });
   })();
 
   /* ---- data-datetime → viewer's local timezone -------------- */

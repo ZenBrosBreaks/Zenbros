@@ -178,6 +178,14 @@ h1, h2 {
   object-position: 50% 68%;
   filter: saturate(1.12) brightness(1.04);
 }
+/* iOS Low Power Mode blocks autoplay and paints a native play glyph
+   over the video — hide it; this layer is decorative background. */
+.zen-bg video::-webkit-media-controls,
+.zen-bg video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0;
+}
 .zen-bg::after {
   content: '';
   position: absolute; inset: 0;
