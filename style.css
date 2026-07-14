@@ -868,25 +868,31 @@ body[data-overlay="cart"] { overflow: hidden; }
   position: relative;
   overflow: hidden;
   text-align: center;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  min-height: clamp(580px, 92vh, 900px);
-  padding: clamp(2.5rem, 6vw, 4rem) 1.2rem clamp(2.5rem, 5vw, 3.5rem);
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: clamp(560px, 88vh, 860px);
+  padding: clamp(3rem, 7vw, 5rem) 1.2rem;
   border-bottom: 1px solid var(--border);
-  /* The actual poster — characters visible up top. */
-  background: var(--bg) url('images/hero-poster.jpg') center top / cover no-repeat;
+  background: var(--bg);
 }
-/* Scrim: clear up top so the art shows, darkening into a readable band at the bottom. */
+/* Live zen background — looping water video, covers the hero. */
+.go-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .go-video { display: none; }   /* fall back to the flat dark bg */
+}
+/* Gentle scrim so the text reads over the moving water. */
 .go-hero::after {
   content: '';
   position: absolute; inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(180deg,
-    rgba(16,18,22,.30) 0%,
-    rgba(16,18,22,.10) 18%,
-    rgba(16,18,22,.58) 48%,
-    rgba(16,18,22,.93) 74%,
-    rgba(16,18,22,.99) 100%);
+  background:
+    radial-gradient(58% 52% at 50% 52%, rgba(10,12,15,.42), transparent 78%),
+    linear-gradient(180deg, rgba(16,18,22,.28) 0%, rgba(16,18,22,.10) 40%, rgba(16,18,22,.62) 100%);
 }
 .go-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .go-kicker {
@@ -896,6 +902,7 @@ body[data-overlay="cart"] { overflow: hidden; }
   font-size: .68rem; font-weight: 700;
   letter-spacing: .26em; text-transform: uppercase;
   color: var(--accent-2);
+  background: rgba(10,12,15,.5);
   border: 1px solid var(--accent-line);
   border-radius: 999px;
 }
@@ -927,17 +934,18 @@ body[data-overlay="cart"] { overflow: hidden; }
   padding: .5rem 1.05rem;
   font-size: .85rem; font-weight: 700; letter-spacing: .01em;
   color: var(--text);
-  background: var(--accent-soft);
+  background: rgba(12,17,14,.55);
   border: 1px solid var(--accent-line);
   border-radius: 999px;
 }
 .go-count {
   margin: 1.5rem auto 0;
   font-size: .78rem; font-weight: 600; letter-spacing: .04em;
-  color: var(--text-3);
+  color: #dfe3e9;
   text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(0,0,0,.85);
 }
-.go-count b { color: var(--text-2); font-weight: 700; }
+.go-count b { color: #ffffff; font-weight: 700; }
 .go-cta-row {
   display: flex; flex-wrap: wrap; gap: .7rem; justify-content: center;
   margin-top: 2.1rem;

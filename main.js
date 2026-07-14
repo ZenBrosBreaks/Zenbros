@@ -302,6 +302,22 @@
   wireServiceForm('shipForm', 'shipDone', 'shipMsg', 'shipSubmit', 'Send Inquiry →');
   wireServiceForm('contactForm', 'contactDone', 'contactMsg', 'contactSubmit', 'Send Message →');
 
+  // --- Keep the zen hero video playing ---
+  // Low-power mode / aggressive tab suspension can pause muted autoplay
+  // video; retry on tab return and on the first interaction.
+  (function () {
+    var v = document.querySelector('.go-video');
+    if (!v) return;
+    function nudge() {
+      if (!v.paused) return;
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) nudge(); });
+    window.addEventListener('touchstart', nudge, { once: true, passive: true });
+    window.addEventListener('click', nudge, { once: true });
+  })();
+
   // --- Grand-opening countdown (degrades gracefully once the day passes) ---
   (function () {
     var el = document.querySelector('[data-countdown]');
