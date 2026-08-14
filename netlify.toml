@@ -25,3 +25,24 @@
   from = "/store"
   to = "/"
   status = 301
+
+# Lending + shipping pages retired
+[[redirects]]
+  from = "/lending.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/lending"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/shipping.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/shipping"
+  to = "/"
+  status = 301
