@@ -271,6 +271,53 @@
     });
   })();
 
+  /* ---- Hero newsletter signup (front page) ------------------
+     Same Netlify "newsletter" form as the promo bar, bigger UI. */
+  (function () {
+    var form = document.getElementById('nlForm');
+    if (!form) return;
+    var emailEl = document.getElementById('nlEmail');
+    var btn     = document.getElementById('nlBtn');
+    var done    = document.getElementById('nlDone');
+    var note    = document.getElementById('nlNote');
+    var isLocal = /^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname);
+
+    function showDone() {
+      form.hidden = true;
+      if (note) note.hidden = true;
+      if (done) done.hidden = false;
+    }
+
+    // Already on the list — show the confirmation instead of the form.
+    if (document.documentElement.classList.contains('zen-joined')) {
+      showDone();
+      return;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (emailEl.value || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailEl.focus(); return; }
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      function ok() {
+        try { localStorage.setItem('zenbros:joined', '1'); } catch (err) {}
+        showDone();
+      }
+      function fail() {
+        if (btn) { btn.disabled = false; btn.textContent = 'Join the list'; }
+      }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then(function (r) { ((r && r.ok) || isLocal) ? ok() : fail(); })
+        .catch(function () { isLocal ? ok() : fail(); });
+    });
+  })();
+
   /* ---- Service inquiry forms (Netlify) ----------------------
      lending → capital-inquiry, shipping → shipping-inquiry,
      contact → general-inquiry. Each lands in the Netlify Forms

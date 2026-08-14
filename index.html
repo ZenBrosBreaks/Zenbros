@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zen Bros Breaks — Grand Opening August 1, 2026 · Moraga</title>
-  <meta name="description" content="Zen Bros Breaks is opening a storefront in Moraga, CA. Grand opening August 1, 2026 — 354 Park St, right next to the Rheem Theatre. Freebies and giveaways all day." />
+  <title>Zen Bros Breaks — Card Shop in Moraga, CA</title>
+  <meta name="description" content="Zen Bros Breaks is now open in Moraga, CA — 354 Park St, next to the Rheem Theatre. Sports cards, TCG, singles, sealed, supplies, and live breaks." />
 
-  <meta property="og:title" content="Zen Bros Breaks — Grand Opening August 1, 2026" />
-  <meta property="og:description" content="New card shop in Moraga, CA. 354 Park St, next to the Rheem Theatre. Freebies all day." />
+  <meta property="og:title" content="Zen Bros Breaks — Now Open in Moraga" />
+  <meta property="og:description" content="Card shop at 354 Park St, next to the Rheem Theatre. Sports cards, TCG, and live breaks." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.png" />
   <meta property="og:url" content="https://www.zenbrosbreaks.com" />
@@ -39,7 +39,7 @@
      ============================================================ -->
 <aside class="promo" aria-label="Email list">
   <div class="wrap promo-row">
-    <p class="promo-text"><strong>Grand opening Aug 1.</strong> Join the list &mdash; 10% off your first break.</p>
+    <p class="promo-text"><strong>Now open in Moraga.</strong> Join the list &mdash; 10% off your first break.</p>
     <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="promo-form" id="joinForm">
       <input type="hidden" name="form-name" value="newsletter" />
       <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
@@ -168,16 +168,23 @@
      ============================================================ -->
 <section class="go-hero">
   <div class="go-inner">
-    <span class="pill"><span class="dot"></span> Grand Opening</span>
-    <h1 class="go-date">August 1</h1>
-    <p class="go-day">Saturday &middot; August 1, 2026</p>
+    <span class="pill"><span class="dot"></span> Now Open</span>
+    <h1 class="go-date">We&rsquo;re open!</h1>
     <p class="go-where">354 Park St, Moraga, CA<span>Next to the Rheem Theatre</span></p>
-    <p class="go-free">Freebies &amp; giveaways all day</p>
+
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="go-join" id="nlForm">
+      <input type="hidden" name="form-name" value="newsletter" />
+      <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+      <input type="email" name="email" id="nlEmail" required placeholder="you@email.com" aria-label="Email address" autocomplete="email" />
+      <button type="submit" class="btn" id="nlBtn">Join the list</button>
+    </form>
+    <p class="go-join-note" id="nlNote">New breaks, shop news, 10% off your first break.</p>
+    <p class="go-join-note" id="nlDone" hidden role="status" aria-live="polite">&check; You&rsquo;re in &mdash; check your inbox.</p>
+
     <div class="go-cta-row">
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">Get directions &rarr;</a>
+      <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">Get directions &rarr;</a>
       <a class="btn-ghost" href="breaks.html">Shop live breaks &rarr;</a>
     </div>
-    <p class="go-count"><b data-countdown="2026-08-01">&nbsp;</b></p>
   </div>
 </section>
 
@@ -215,40 +222,24 @@
     </div>
   </section>
 
-  <!-- Gallery — swap a .tile-empty for <img src="images/store-1.jpg" alt="Inside the shop" /> when photos are ready -->
   <section class="panel">
     <p class="eyebrow">The shop</p>
     <h2>Take a look inside.</h2>
     <div class="gallery">
       <figure class="tile tile--wide">
-        <div class="tile-empty">
-          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-          <span>Images coming soon</span>
-        </div>
+        <img src="images/store-1.jpg" alt="The counter and card display case at Zen Bros Breaks" loading="lazy" />
       </figure>
       <figure class="tile">
-        <div class="tile-empty">
-          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-          <span>Images coming soon</span>
-        </div>
+        <img src="images/store-2.jpg" alt="Memorabilia wall with jerseys and the NBA Champions banner" loading="lazy" />
       </figure>
       <figure class="tile">
-        <div class="tile-empty">
-          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-          <span>Images coming soon</span>
-        </div>
+        <img src="images/store-3.jpg" alt="Pok&eacute;mon and Magic shelf" loading="lazy" />
       </figure>
       <figure class="tile">
-        <div class="tile-empty">
-          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-          <span>Images coming soon</span>
-        </div>
+        <img src="images/store-4.jpg" alt="Customers in the shop on grand opening day" loading="lazy" />
       </figure>
       <figure class="tile">
-        <div class="tile-empty">
-          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h2l1.5-2h7L19 7h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-          <span>Images coming soon</span>
-        </div>
+        <img src="images/store-5.jpg" alt="The storefront on Park St in Moraga" loading="lazy" />
       </figure>
     </div>
   </section>

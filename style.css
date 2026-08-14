@@ -740,6 +740,42 @@ html.zen-joined .promo { display: none; }
 }
 .go-count b { color: #fff; font-weight: 800; }
 
+/* Hero newsletter signup */
+.go-join {
+  display: flex; align-items: stretch;
+  gap: .5rem;
+  max-width: 440px;
+  margin: 1.7rem auto 0;
+}
+.go-join input[type="email"] {
+  flex: 1; min-width: 0;
+  padding: .85rem 1rem;
+  background: rgba(10,13,16,.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--r);
+  color: var(--text);
+  font-size: .92rem;
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.go-join input[type="email"]::placeholder { color: var(--text-3); }
+.go-join input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.go-join .btn { white-space: nowrap; }
+.go-join-note {
+  margin-top: .8rem;
+  font-size: .8rem;
+  color: #dfe3e9;
+  text-shadow: 0 1px 10px rgba(0,0,0,.85);
+}
+@media (max-width: 480px) {
+  .go-join { flex-direction: column; }
+}
+
 
 /* ============================================================
    10) PLACE CARD + MAP + GALLERY
