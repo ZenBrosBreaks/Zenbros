@@ -45,6 +45,13 @@
       <!-- ============================================================
            THE SHEET — warm paper over the garden
            ============================================================ -->
+      <!-- Utility line — standard newsletter convention -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">
+        <tr><td align="center" style="padding:0 0 7px;font-size:10px;letter-spacing:1px;color:#ffffff;text-shadow:0 1px 8px rgba(0,0,0,.9);">
+          Trouble viewing? <a href="https://zenbrosbreaks.com/email-templates/newsletter.html" style="color:#ffffff;text-decoration:underline;text-shadow:0 1px 8px rgba(0,0,0,.9);">Open in your browser</a>
+        </td></tr>
+      </table>
+
       <!-- Real paper: seamless grain tile + warm base. Outlook ignores the
            tile/shadow and falls back to flat #f6f1e5 via bgcolor — still paper-toned. -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
@@ -70,13 +77,35 @@
           <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:3px;color:#5d7566;">GRAND OPENING</p>
           <h1 style="margin:0 0 6px;font-family:'Permanent Marker','Brush Script MT','Segoe Script',cursive;font-size:30px;line-height:1.1;font-weight:400;color:#161109;">Thank you, Moraga.</h1>
           <p style="margin:0 0 12px;font-size:14px;line-height:1.55;color:#2a2721;">Opening day was better than we could have hoped &mdash; packed shop, first pulls, familiar faces and a bunch of new ones. Thank you for showing up for us. This is just the start.</p>
+          <!-- Photo prints: white borders + captions, like snapshots laid on the sheet -->
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
-              <td width="32%" valign="top"><img src="https://zenbrosbreaks.com/images/store-4.jpg" alt="Opening day" width="174" style="display:block;width:100%;height:auto;border:0;border-radius:6px;" /></td>
+              <td width="32%" valign="top">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr><td bgcolor="#ffffff" style="background:#ffffff;padding:5px 5px 6px;border:1px solid rgba(0,0,0,.18);border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.16);">
+                    <img src="https://zenbrosbreaks.com/images/store-4.jpg" alt="Opening day" width="164" style="display:block;width:100%;height:auto;border:0;" />
+                  </td></tr>
+                  <tr><td align="center" style="padding-top:5px;font-size:9px;font-weight:700;letter-spacing:2px;color:#7c7364;">OPENING DAY</td></tr>
+                </table>
+              </td>
               <td width="2%">&nbsp;</td>
-              <td width="32%" valign="top"><img src="https://zenbrosbreaks.com/images/store-1.jpg" alt="The display case" width="174" style="display:block;width:100%;height:auto;border:0;border-radius:6px;" /></td>
+              <td width="32%" valign="top">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr><td bgcolor="#ffffff" style="background:#ffffff;padding:5px 5px 6px;border:1px solid rgba(0,0,0,.18);border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.16);">
+                    <img src="https://zenbrosbreaks.com/images/store-1.jpg" alt="The display case" width="164" style="display:block;width:100%;height:auto;border:0;" />
+                  </td></tr>
+                  <tr><td align="center" style="padding-top:5px;font-size:9px;font-weight:700;letter-spacing:2px;color:#7c7364;">THE CASE</td></tr>
+                </table>
+              </td>
               <td width="2%">&nbsp;</td>
-              <td width="32%" valign="top"><img src="https://zenbrosbreaks.com/images/store-2.jpg" alt="The memorabilia wall" width="174" style="display:block;width:100%;height:auto;border:0;border-radius:6px;" /></td>
+              <td width="32%" valign="top">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr><td bgcolor="#ffffff" style="background:#ffffff;padding:5px 5px 6px;border:1px solid rgba(0,0,0,.18);border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.16);">
+                    <img src="https://zenbrosbreaks.com/images/store-2.jpg" alt="The memorabilia wall" width="164" style="display:block;width:100%;height:auto;border:0;" />
+                  </td></tr>
+                  <tr><td align="center" style="padding-top:5px;font-size:9px;font-weight:700;letter-spacing:2px;color:#7c7364;">THE WALL</td></tr>
+                </table>
+              </td>
             </tr>
           </table>
         </td></tr>
@@ -90,25 +119,45 @@
         <tr><td style="padding:18px 30px 0;">
           <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:3px;color:#5d7566;">YOU TELL US</p>
           <h2 style="margin:0 0 6px;font-family:'Permanent Marker','Brush Script MT','Segoe Script',cursive;font-size:23px;line-height:1.15;font-weight:400;color:#161109;">What should we run for the community?</h2>
-          <p style="margin:0 0 6px;font-size:14px;line-height:1.55;color:#2a2721;">Events around Moraga &mdash; Canyon Club, local schools, spots like that. One tap = one vote, counted instantly. Vote for as many as you like.</p>
+          <p style="margin:0 0 6px;font-size:14px;line-height:1.55;color:#2a2721;">Events around Moraga &mdash; Canyon Club, local schools, spots like that. Tap to cast your ballot: one tap = one vote, counted instantly, pick as many as you like.</p>
 
+          <!-- Ballot rows: empty ink checkbox + option + arrow at the right edge.
+               (The checkbox div degrades to a small square blob in Outlook — fine.) -->
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr><td style="border-bottom:1px solid rgba(0,0,0,.15);">
               <a href="https://zenbrosbreaks.com/.netlify/functions/vote?o=trade-nights" style="display:block;padding:11px 4px;text-decoration:none;">
-                <span style="font-size:15px;font-weight:800;color:#161109;">Trade nights&nbsp; &rarr;</span>
-                <span style="display:block;margin-top:2px;font-size:12px;color:#7c7364;">Bring your binder &middot; Canyon Club or another local spot</span>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="26" valign="top" style="padding-top:2px;"><div style="width:13px;height:13px;border:2px solid #161109;border-radius:3px;font-size:0;line-height:0;">&nbsp;</div></td>
+                  <td>
+                    <span style="font-size:15px;font-weight:800;color:#161109;">Trade nights</span>
+                    <span style="display:block;margin-top:2px;font-size:12px;color:#7c7364;">Bring your binder &middot; Canyon Club or another local spot</span>
+                  </td>
+                  <td width="20" align="right" valign="middle" style="font-size:15px;font-weight:800;color:#161109;">&rarr;</td>
+                </tr></table>
               </a>
             </td></tr>
             <tr><td style="border-bottom:1px solid rgba(0,0,0,.15);">
               <a href="https://zenbrosbreaks.com/.netlify/functions/vote?o=workshops" style="display:block;padding:11px 4px;text-decoration:none;">
-                <span style="font-size:15px;font-weight:800;color:#161109;">Collecting workshops&nbsp; &rarr;</span>
-                <span style="display:block;margin-top:2px;font-size:12px;color:#7c7364;">Grading, values, the basics &middot; schools, Canyon Club, local church</span>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="26" valign="top" style="padding-top:2px;"><div style="width:13px;height:13px;border:2px solid #161109;border-radius:3px;font-size:0;line-height:0;">&nbsp;</div></td>
+                  <td>
+                    <span style="font-size:15px;font-weight:800;color:#161109;">Collecting workshops</span>
+                    <span style="display:block;margin-top:2px;font-size:12px;color:#7c7364;">Grading, values, the basics &middot; schools, Canyon Club, local church</span>
+                  </td>
+                  <td width="20" align="right" valign="middle" style="font-size:15px;font-weight:800;color:#161109;">&rarr;</td>
+                </tr></table>
               </a>
             </td></tr>
             <tr><td>
               <a href="https://zenbrosbreaks.com/.netlify/functions/vote?o=game-nights" style="display:block;padding:11px 4px;text-decoration:none;">
-                <span style="font-size:15px;font-weight:800;color:#161109;">TCG game nights&nbsp; &rarr;</span>
-                <span style="display:block;margin-top:2px;font-size:12px;color:#7c7364;">Pok&eacute;mon &middot; One Piece &middot; Magic the Gathering</span>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="26" valign="top" style="padding-top:2px;"><div style="width:13px;height:13px;border:2px solid #161109;border-radius:3px;font-size:0;line-height:0;">&nbsp;</div></td>
+                  <td>
+                    <span style="font-size:15px;font-weight:800;color:#161109;">TCG game nights</span>
+                    <span style="display:block;margin-top:2px;font-size:12px;color:#7c7364;">Pok&eacute;mon &middot; One Piece &middot; Magic the Gathering</span>
+                  </td>
+                  <td width="20" align="right" valign="middle" style="font-size:15px;font-weight:800;color:#161109;">&rarr;</td>
+                </tr></table>
               </a>
             </td></tr>
           </table>
@@ -123,12 +172,27 @@
         <tr><td style="padding:18px 30px 0;">
           <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:3px;color:#5d7566;">LIVE ON WHATNOT</p>
           <h2 style="margin:0 0 4px;font-family:'Permanent Marker','Brush Script MT','Segoe Script',cursive;font-size:23px;line-height:1.15;font-weight:400;color:#161109;">This week&rsquo;s shows.</h2>
-          <p style="margin:0 0 12px;font-size:11.5px;color:#7c7364;">5.0 &#9733; &middot; 1,299 reviews &middot; 14K sold &middot; $1 starts all week</p>
+          <p style="margin:0 0 8px;font-size:11.5px;color:#7c7364;">5.0 &#9733; &middot; 1,299 reviews &middot; 14K sold &middot; $1 starts &middot; all times Pacific</p>
 
-          <p style="margin:0 0 5px;font-size:14px;line-height:1.5;color:#2a2721;"><strong style="color:#161109;">Sat &middot; 11:30 AM PT</strong> &nbsp;&mdash;&nbsp; House of the Dragon hobby box break</p>
-          <p style="margin:0 0 5px;font-size:14px;line-height:1.5;color:#2a2721;"><strong style="color:#161109;">Sun &middot; 3:30 PM PT</strong> &nbsp;&mdash;&nbsp; 2025 Prizm Basketball hobby breaks</p>
-          <p style="margin:0 0 5px;font-size:14px;line-height:1.5;color:#2a2721;"><strong style="color:#161109;">Tue &middot; 6:30 PM PT</strong> &nbsp;&mdash;&nbsp; Game of Thrones: Great Houses <span style="color:#7c7364;">(every Tuesday)</span></p>
-          <p style="margin:0 0 5px;font-size:14px;line-height:1.5;color:#2a2721;"><strong style="color:#161109;">Thu &middot; 6:30 PM PT</strong> &nbsp;&mdash;&nbsp; Leaf Pop Century hobby break</p>
+          <!-- Timetable: fixed day/time column, hairline rows — TV-listings style -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 12px;">
+            <tr>
+              <td width="104" style="padding:7px 0;border-bottom:1px solid rgba(0,0,0,.12);font-size:13px;font-weight:800;color:#161109;white-space:nowrap;">Sat &middot; 11:30 AM</td>
+              <td style="padding:7px 0 7px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-size:13.5px;line-height:1.4;color:#2a2721;">House of the Dragon hobby box break</td>
+            </tr>
+            <tr>
+              <td width="104" style="padding:7px 0;border-bottom:1px solid rgba(0,0,0,.12);font-size:13px;font-weight:800;color:#161109;white-space:nowrap;">Sun &middot; 3:30 PM</td>
+              <td style="padding:7px 0 7px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-size:13.5px;line-height:1.4;color:#2a2721;">2025 Prizm Basketball hobby breaks</td>
+            </tr>
+            <tr>
+              <td width="104" style="padding:7px 0;border-bottom:1px solid rgba(0,0,0,.12);font-size:13px;font-weight:800;color:#161109;white-space:nowrap;">Tue &middot; 6:30 PM</td>
+              <td style="padding:7px 0 7px 12px;border-bottom:1px solid rgba(0,0,0,.12);font-size:13.5px;line-height:1.4;color:#2a2721;">Game of Thrones: Great Houses <span style="color:#7c7364;">(every Tuesday)</span></td>
+            </tr>
+            <tr>
+              <td width="104" style="padding:7px 0;font-size:13px;font-weight:800;color:#161109;white-space:nowrap;">Thu &middot; 6:30 PM</td>
+              <td style="padding:7px 0 7px 12px;font-size:13.5px;line-height:1.4;color:#2a2721;">Leaf Pop Century hobby break</td>
+            </tr>
+          </table>
           <p style="margin:0 0 12px;font-size:12px;color:#7c7364;">&hellip;plus Star Trek, NASCAR, Walking Dead &amp; more &mdash; 17 shows on the calendar.</p>
 
           <a href="https://www.whatnot.com/user/zenbrosbreaks" style="display:inline-block;background:#161109;color:#f6f1e5;text-decoration:none;font-weight:800;font-size:12.5px;padding:10px 18px;border-radius:8px;">See the full schedule &rarr;</a>
@@ -148,11 +212,20 @@
           <p style="margin:0 0 3px;font-size:15px;font-weight:800;color:#161109;">The Cooper Flagg 1/1 is out there</p>
           <p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:#2a2721;">The chase card of the year finally hit &mdash; the whole hobby is ripping. New basketball wax is moving fast; come grab some before it&rsquo;s gone.</p>
 
-          <p style="margin:0 0 2px;font-size:10px;font-weight:800;letter-spacing:2px;color:#5d7566;">PULLED IN OUR SHOP</p>
-          <p style="margin:0 0 3px;font-size:15px;font-weight:800;color:#161109;">Munetaka Murakami orange auto /25</p>
-          <p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:#2a2721;">Biggest hit in the shop so far &mdash; pulled right at the counter. Full photo on our Instagram.</p>
-          <!-- EDIT-MURAKAMI: swap for the exact IG post URL for a deep link -->
-          <a href="https://www.instagram.com/zenbrosbreaks/" style="display:inline-block;background:#161109;color:#f6f1e5;text-decoration:none;font-weight:800;font-size:12.5px;padding:10px 18px;border-radius:8px;">See the card &rarr;</a>
+          <!-- Framed like a mounted card — double rule, certificate style -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td style="border:1px solid rgba(46,36,18,.5);border-radius:3px;padding:2px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f1ead9">
+                <tr><td style="background:#f1ead9;border:1px solid rgba(46,36,18,.25);padding:13px 15px 15px;">
+                  <p style="margin:0 0 3px;font-size:10px;font-weight:800;letter-spacing:2px;color:#a83a28;">PULLED IN OUR SHOP</p>
+                  <p style="margin:0 0 3px;font-size:15px;font-weight:800;color:#161109;">Munetaka Murakami orange auto /25</p>
+                  <p style="margin:0 0 11px;font-size:14px;line-height:1.5;color:#2a2721;">Biggest hit in the shop so far &mdash; pulled right at the counter. Full photo on our Instagram.</p>
+                  <!-- EDIT-MURAKAMI: swap for the exact IG post URL for a deep link -->
+                  <a href="https://www.instagram.com/zenbrosbreaks/" style="display:inline-block;background:#161109;color:#f6f1e5;text-decoration:none;font-weight:800;font-size:12.5px;padding:10px 18px;border-radius:8px;">See the card &rarr;</a>
+                </td></tr>
+              </table>
+            </td></tr>
+          </table>
         </td></tr>
 
         <!-- rule -->
@@ -165,10 +238,22 @@
           <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:3px;color:#5d7566;">COME THROUGH</p>
           <h2 style="margin:0 0 6px;font-family:'Permanent Marker','Brush Script MT','Segoe Script',cursive;font-size:23px;line-height:1.15;font-weight:400;color:#161109;">Store hours.</h2>
 
-          <p style="margin:0 0 4px;font-size:14px;line-height:1.6;color:#2a2721;"><strong style="color:#161109;">Wed &ndash; Sun</strong> &nbsp;1 &ndash; 7 PM &nbsp;&nbsp;&middot;&nbsp;&nbsp; <strong style="color:#161109;">Mon &ndash; Tue</strong> &nbsp;Closed</p>
+          <p style="margin:0 0 4px;font-size:15px;line-height:1.6;color:#2a2721;"><strong style="color:#161109;">Wed &ndash; Sun</strong> &nbsp;1 &ndash; 7 PM &nbsp;&nbsp;&middot;&nbsp;&nbsp; <strong style="color:#161109;">Mon &ndash; Tue</strong> &nbsp;Closed</p>
           <p style="margin:0 0 12px;font-size:12.5px;line-height:1.6;color:#7c7364;">354 Park St, Moraga &middot; next to the Rheem Theatre</p>
 
           <a href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" style="display:inline-block;background:#161109;color:#f6f1e5;text-decoration:none;font-weight:800;font-size:12.5px;padding:10px 18px;border-radius:8px;">Get directions &rarr;</a>
+
+          <!-- Sign-off: brush signature + vermilion hanko-style seal -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px;">
+            <tr>
+              <td valign="middle" style="font-family:'Permanent Marker','Brush Script MT','Segoe Script',cursive;font-size:19px;color:#161109;padding-right:10px;">See you at the shop &mdash; The Zen Bros</td>
+              <td valign="middle">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#a83a28" style="border-radius:4px;">
+                  <tr><td align="center" valign="middle" style="width:24px;height:24px;font-size:9px;font-weight:800;color:#f6f1e5;letter-spacing:.5px;">ZB</td></tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </td></tr>
 
       </table>
