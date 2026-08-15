@@ -48,22 +48,27 @@ exports.handler = async function (event) {
   }
 
   return page('&#10003; Vote counted!',
-    'Thanks &mdash; you voted for <strong style="color:#ffffff;">' + OPTIONS[opt] + '</strong>.<br />' +
-    'You can close this tab. Want to back another idea? Tap it in the email too.');
+    'Thanks &mdash; you voted for <strong style="color:#ffffff;">' + OPTIONS[opt] + '</strong>.',
+    true);
 };
 
-function page(title, body) {
+function page(title, body, redirect) {
   return {
     statusCode: 200,
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
     body: '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">' +
       '<meta name="viewport" content="width=device-width, initial-scale=1">' +
+      (redirect ? '<meta http-equiv="refresh" content="2;url=https://zenbrosbreaks.com">' : '') +
       '<title>Zen Bros — Community poll</title></head>' +
       '<body style="margin:0;padding:0;background:#12161c;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Arial,sans-serif;">' +
       '<div style="max-width:420px;margin:0 auto;padding:60px 20px;text-align:center;">' +
       '<p style="margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:3px;color:#2ee6a3;">ZEN BROS &middot; COMMUNITY POLL</p>' +
       '<h1 style="margin:0 0 12px;font-size:26px;line-height:1.2;color:#f7f8fa;">' + title + '</h1>' +
-      '<p style="margin:0;font-size:14px;line-height:1.6;color:#c6cbd4;">' + body + '</p>' +
+      '<p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#c6cbd4;">' + body + '</p>' +
+      (redirect
+        ? '<p style="margin:0;font-size:12px;color:#8f97a4;">Taking you to <a href="https://zenbrosbreaks.com" style="color:#2ee6a3;text-decoration:none;font-weight:700;">zenbrosbreaks.com</a>&hellip;</p>' +
+          '<script>setTimeout(function(){location.href="https://zenbrosbreaks.com";},2000);</script>'
+        : '<p style="margin:0;font-size:12px;"><a href="https://zenbrosbreaks.com" style="color:#2ee6a3;text-decoration:none;font-weight:700;">Back to zenbrosbreaks.com &rarr;</a></p>') +
       '</div></body></html>'
   };
 }
