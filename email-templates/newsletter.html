@@ -3,31 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zen Bros — Newsletter</title>
+<title>Zen Bros — Newsletter · Issue 1</title>
 </head>
 <!--
   =================================================================
-  ZEN BROS — NEWSLETTER TEMPLATE (reusable)
+  ZEN BROS — NEWSLETTER · ISSUE 1 (Thank you / poll / what's new)
   =================================================================
-  HOW TO SEND AN ISSUE:
-    1. Edit the marked sections below (date, hero, sections).
-    2. Copy this ENTIRE file.
-    3. Resend dashboard → Broadcasts → New Broadcast.
-    4. From:    Zen Bros Breaks <noreply@zenbrosbreaks.com>
-       (or ben@zenbrosbreaks.com once that address is verified)
-    5. Subject: e.g. "We're open — come see the shop"
-    6. Switch the editor to HTML / code view → paste.
-    7. Audience: your list → Send a TEST to yourself first → Send.
+  ►► EDIT BEFORE SENDING — search for "EDIT":
+     1. EDIT-HOURS    — real store hours
+     2. EDIT-SHOWS    — real Whatnot schedule rows
+     3. EDIT-MURAKAMI — Instagram post link (+ optional photo URL)
 
-  {{{RESEND_UNSUBSCRIBE_URL}}} is replaced automatically by Resend.
-  Images load from the live site (zenbrosbreaks.com must be up).
+  HOW TO SEND:
+    1. Fix the EDIT spots above.
+    2. Copy this ENTIRE file (Ctrl+A, Ctrl+C in Notepad).
+    3. Resend → Broadcasts → New Broadcast.
+    4. From:    Zen Bros Breaks <noreply@zenbrosbreaks.com>
+    5. Subject: Thank you, Moraga — and help us plan what's next
+    6. Editor → HTML/code view → paste → send a TEST first.
+
+  Poll buttons hit zenbrosbreaks.com/.netlify/functions/vote —
+  every confirmed vote lands in Netlify → Forms → "event-poll".
+  {{{RESEND_UNSUBSCRIBE_URL}}} is filled in by Resend.
   =================================================================
 -->
 <body style="margin:0;padding:0;background:#14171c;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;color:#f7f8fa;">
 
-<!-- Inbox preview snippet — EDIT PER ISSUE -->
+<!-- Inbox preview snippet -->
 <div style="display:none;max-height:0;overflow:hidden;font-size:1px;line-height:1px;color:#14171c;opacity:0;">
-  The shop is open in Moraga — come by, see the cases, and grab 10% off your first break.
+  Thank you for an unreal grand opening. Vote on what we do next, catch our Whatnot shows, and see the biggest pull in the shop so far.
 </div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#14171c;padding:28px 12px;">
@@ -35,7 +39,7 @@
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background:#191d23;border:1px solid #363c47;border-radius:14px;overflow:hidden;">
 
       <!-- ============================================================
-           MASTHEAD — edit the issue date
+           MASTHEAD
            ============================================================ -->
       <tr><td style="padding:20px 26px;border-bottom:1px solid #363c47;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -45,37 +49,38 @@
               <span style="display:inline-block;margin-left:7px;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#8f97a4;vertical-align:middle;">Breaks</span>
             </td>
             <td align="right" valign="middle" style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8f97a4;">
-              August 2026
+              Issue 1 &middot; August 2026
             </td>
           </tr>
         </table>
       </td></tr>
 
       <!-- ============================================================
-           HERO — edit headline + intro per issue
+           1) THANK YOU
            ============================================================ -->
       <tr><td style="padding:26px 26px 6px;">
-        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">The shop</p>
-        <h1 style="margin:0 0 10px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:30px;line-height:1.15;font-weight:400;color:#f7f8fa;">We&rsquo;re open!</h1>
-        <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#c6cbd4;">Zen Bros has a real front door now &mdash; 354 Park St in Moraga, right next to the Rheem Theatre. Singles, slabs, sealed, TCG, and supplies. Come dig through the cases.</p>
+        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">Grand opening</p>
+        <h1 style="margin:0 0 10px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:30px;line-height:1.15;font-weight:400;color:#f7f8fa;">Thank you, Moraga.</h1>
+        <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#c6cbd4;">Opening day was better than we could have hoped &mdash; packed shop, first pulls, familiar faces and a bunch of new ones. Seriously: thank you for showing up for us. This is just the start.</p>
       </td></tr>
 
-      <!-- Hero photo (from the live site) -->
-      <tr><td style="padding:4px 26px 18px;">
+      <!-- Photo: opening day crowd -->
+      <tr><td style="padding:0 26px 10px;">
         <a href="https://zenbrosbreaks.com" style="text-decoration:none;display:block;">
-          <img src="https://zenbrosbreaks.com/images/store-1.jpg" alt="The counter and display case at Zen Bros Breaks" width="508" style="display:block;width:100%;max-width:508px;height:auto;border:1px solid #363c47;border-radius:10px;" />
+          <img src="https://zenbrosbreaks.com/images/store-4.jpg" alt="Opening day at Zen Bros Breaks" width="508" style="display:block;width:100%;max-width:508px;height:auto;border:1px solid #363c47;border-radius:10px;" />
         </a>
       </td></tr>
 
-      <!-- Visit CTA -->
-      <tr><td style="padding:0 26px 24px;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+      <!-- Photos: counter + wall, side by side -->
+      <tr><td style="padding:0 26px 22px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td>
-              <a href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" style="display:inline-block;background:#2ee6a3;color:#06160e;text-decoration:none;font-weight:800;font-size:13px;padding:12px 20px;border-radius:8px;">Get directions &rarr;</a>
+            <td width="49%" valign="top">
+              <img src="https://zenbrosbreaks.com/images/store-1.jpg" alt="The display case" width="249" style="display:block;width:100%;height:auto;border:1px solid #363c47;border-radius:10px;" />
             </td>
-            <td style="padding-left:10px;">
-              <a href="https://zenbrosbreaks.com" style="display:inline-block;background:#21252d;border:1px solid #363c47;color:#f7f8fa;text-decoration:none;font-weight:700;font-size:13px;padding:12px 20px;border-radius:8px;">zenbrosbreaks.com &rarr;</a>
+            <td width="2%">&nbsp;</td>
+            <td width="49%" valign="top">
+              <img src="https://zenbrosbreaks.com/images/store-2.jpg" alt="The memorabilia wall" width="249" style="display:block;width:100%;height:auto;border:1px solid #363c47;border-radius:10px;" />
             </td>
           </tr>
         </table>
@@ -85,28 +90,116 @@
       <tr><td style="padding:0 26px;"><div style="height:1px;background:#363c47;line-height:1px;font-size:0;">&nbsp;</div></td></tr>
 
       <!-- ============================================================
-           SECTION 2 — EDIT PER ISSUE (breaks / news / whatever)
-           Duplicate this block for more sections.
+           2) COMMUNITY POLL
            ============================================================ -->
       <tr><td style="padding:22px 26px 24px;">
-        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">Breaks</p>
-        <h2 style="margin:0 0 10px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:24px;line-height:1.2;font-weight:400;color:#f7f8fa;">Next break loading&hellip;</h2>
-        <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#c6cbd4;">We&rsquo;re lining up the next live rip. You&rsquo;re on the list, so you&rsquo;ll hear about it here first &mdash; and until then we&rsquo;re live on Whatnot every week.</p>
-        <a href="https://www.whatnot.com/user/zenbrosbreaks" style="display:inline-block;background:#2ee6a3;color:#06160e;text-decoration:none;font-weight:800;font-size:13px;padding:12px 20px;border-radius:8px;">Watch live on Whatnot &rarr;</a>
+        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">You tell us</p>
+        <h2 style="margin:0 0 10px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:24px;line-height:1.2;font-weight:400;color:#f7f8fa;">What should we run for the community?</h2>
+        <p style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#c6cbd4;">We want to start hosting events around Moraga &mdash; Canyon Club, local schools, spots like that. Tap <strong style="color:#f7f8fa;">everything</strong> you&rsquo;d actually show up for. One tap each, vote for as many as you like.</p>
+
+        <a href="https://zenbrosbreaks.com/.netlify/functions/vote?o=trade-nights" style="display:block;margin:0 0 10px;background:#21252d;border:1px solid #7bf2c7;color:#f7f8fa;text-decoration:none;font-weight:700;font-size:14px;padding:14px 18px;border-radius:9px;">
+          &#127920; Trade nights <span style="display:block;margin-top:3px;font-size:12px;font-weight:500;color:#8f97a4;">Bring your binder &mdash; Canyon Club or another local spot</span>
+        </a>
+        <a href="https://zenbrosbreaks.com/.netlify/functions/vote?o=workshops" style="display:block;margin:0 0 10px;background:#21252d;border:1px solid #7bf2c7;color:#f7f8fa;text-decoration:none;font-weight:700;font-size:14px;padding:14px 18px;border-radius:9px;">
+          &#127891; Collecting workshops <span style="display:block;margin-top:3px;font-size:12px;font-weight:500;color:#8f97a4;">Grading, values, the basics &mdash; schools, Canyon Club, local church</span>
+        </a>
+        <a href="https://zenbrosbreaks.com/.netlify/functions/vote?o=game-nights" style="display:block;margin:0 0 14px;background:#21252d;border:1px solid #7bf2c7;color:#f7f8fa;text-decoration:none;font-weight:700;font-size:14px;padding:14px 18px;border-radius:9px;">
+          &#127918; TCG game nights <span style="display:block;margin-top:3px;font-size:12px;font-weight:500;color:#8f97a4;">Pok&eacute;mon, One Piece, Magic the Gathering</span>
+        </a>
+        <p style="margin:0;font-size:12px;line-height:1.5;color:#8f97a4;">Each tap opens a one-click confirm page so your vote counts.</p>
       </td></tr>
 
       <!-- Divider -->
       <tr><td style="padding:0 26px;"><div style="height:1px;background:#363c47;line-height:1px;font-size:0;">&nbsp;</div></td></tr>
 
       <!-- ============================================================
-           SECTION 3 — first-order code reminder (keep or cut)
+           3) LIVE ON WHATNOT — EDIT-SHOWS: real schedule
+           ============================================================ -->
+      <tr><td style="padding:22px 26px 24px;">
+        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">Live on Whatnot</p>
+        <h2 style="margin:0 0 10px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:24px;line-height:1.2;font-weight:400;color:#f7f8fa;">Catch a show this week.</h2>
+
+        <!-- EDIT-SHOWS: swap these rows for the real schedule -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px;">
+          <tr>
+            <td style="padding:10px 14px;background:#21252d;border:1px solid #363c47;border-radius:9px;font-size:13px;color:#c6cbd4;">
+              <strong style="color:#f7f8fa;">Tuesdays &middot; 7 PM PT</strong> &mdash; Pok&eacute;mon rips &amp; singles
+            </td>
+          </tr>
+          <tr><td style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+          <tr>
+            <td style="padding:10px 14px;background:#21252d;border:1px solid #363c47;border-radius:9px;font-size:13px;color:#c6cbd4;">
+              <strong style="color:#f7f8fa;">Fridays &middot; 6 PM PT</strong> &mdash; Sports night: breaks &amp; auctions
+            </td>
+          </tr>
+        </table>
+
+        <a href="https://www.whatnot.com/user/zenbrosbreaks" style="display:inline-block;background:#2ee6a3;color:#06160e;text-decoration:none;font-weight:800;font-size:13px;padding:12px 20px;border-radius:8px;">Follow us on Whatnot &rarr;</a>
+      </td></tr>
+
+      <!-- Divider -->
+      <tr><td style="padding:0 26px;"><div style="height:1px;background:#363c47;line-height:1px;font-size:0;">&nbsp;</div></td></tr>
+
+      <!-- ============================================================
+           4) WHAT'S NEW IN THE HOBBY
+           ============================================================ -->
+      <tr><td style="padding:22px 26px 8px;">
+        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">What&rsquo;s new in the hobby</p>
+        <h2 style="margin:0 0 14px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:24px;line-height:1.2;font-weight:400;color:#f7f8fa;">Big pulls &amp; fresh wax.</h2>
+      </td></tr>
+
+      <!-- Around the hobby -->
+      <tr><td style="padding:0 26px 10px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#21252d;border:1px solid #363c47;border-radius:10px;">
+          <tr><td style="padding:16px 18px;">
+            <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#45c6fa;">Around the hobby</p>
+            <p style="margin:0 0 6px;font-size:15px;font-weight:700;color:#f7f8fa;">The Cooper Flagg 1/1 is out there</p>
+            <p style="margin:0;font-size:13px;line-height:1.55;color:#c6cbd4;">The chase card of the year finally hit &mdash; and it has the whole hobby ripping. New basketball wax is moving fast; come grab some before it&rsquo;s gone.</p>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <!-- In our shop — EDIT-MURAKAMI: add the IG post link (+ photo if you send one) -->
+      <tr><td style="padding:0 26px 24px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#21252d;border:1px solid #7bf2c7;border-radius:10px;">
+          <tr><td style="padding:16px 18px;">
+            <p style="margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#7bf2c7;">Pulled in our shop</p>
+            <p style="margin:0 0 6px;font-size:15px;font-weight:700;color:#f7f8fa;">Murakami orange /25 auto &#128293;</p>
+            <p style="margin:0 0 12px;font-size:13px;line-height:1.55;color:#c6cbd4;">Biggest hit in the shop so far &mdash; pulled right at the counter. Full photo on our Instagram.</p>
+            <!-- EDIT-MURAKAMI: replace href with the exact IG post URL -->
+            <a href="https://www.instagram.com/zenbrosbreaks/" style="display:inline-block;background:#2ee6a3;color:#06160e;text-decoration:none;font-weight:800;font-size:12px;padding:10px 16px;border-radius:8px;">See the card &rarr;</a>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <!-- Divider -->
+      <tr><td style="padding:0 26px;"><div style="height:1px;background:#363c47;line-height:1px;font-size:0;">&nbsp;</div></td></tr>
+
+      <!-- ============================================================
+           5) STORE HOURS — EDIT-HOURS: real hours
            ============================================================ -->
       <tr><td style="padding:22px 26px 26px;">
-        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">For new folks</p>
-        <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#c6cbd4;">First break with us? This takes 10% off:</p>
-        <div style="display:inline-block;padding:12px 22px;border:1px dashed #7bf2c7;border-radius:8px;background:#1d2822;">
-          <span style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:18px;font-weight:800;letter-spacing:.14em;color:#7bf2c7;">WELCOME10</span>
-        </div>
+        <p style="margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7b6c8;">Come through</p>
+        <h2 style="margin:0 0 12px;font-family:'Permanent Marker','Comic Sans MS',cursive;font-size:24px;line-height:1.2;font-weight:400;color:#f7f8fa;">Store hours.</h2>
+
+        <!-- EDIT-HOURS: swap for the real schedule -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px;font-size:13px;color:#c6cbd4;">
+          <tr>
+            <td style="padding:6px 0;border-bottom:1px solid #363c47;"><strong style="color:#f7f8fa;">Wed &ndash; Fri</strong></td>
+            <td align="right" style="padding:6px 0;border-bottom:1px solid #363c47;">12 &ndash; 6 PM</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 0;border-bottom:1px solid #363c47;"><strong style="color:#f7f8fa;">Sat &ndash; Sun</strong></td>
+            <td align="right" style="padding:6px 0;border-bottom:1px solid #363c47;">11 AM &ndash; 6 PM</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 0;"><strong style="color:#f7f8fa;">Mon &ndash; Tue</strong></td>
+            <td align="right" style="padding:6px 0;">Closed</td>
+          </tr>
+        </table>
+
+        <p style="margin:0 0 14px;font-size:13px;line-height:1.55;color:#c6cbd4;">354 Park St, Moraga &middot; next to the Rheem Theatre.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" style="display:inline-block;background:#21252d;border:1px solid #363c47;color:#f7f8fa;text-decoration:none;font-weight:700;font-size:13px;padding:12px 20px;border-radius:8px;">Get directions &rarr;</a>
       </td></tr>
 
       <!-- ============================================================
