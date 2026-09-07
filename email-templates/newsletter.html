@@ -49,9 +49,11 @@
       .mobile-hide{display:none!important}
       .mobile-center{text-align:center!important}
       .mast-name{font-size:29px!important;line-height:31px!important}
-      .birthday-copy{padding:13px 14px 7px!important}
-      .birthday-cta{padding:0 14px 14px!important;text-align:left!important}
-      .birthday-cta table{float:none!important;width:auto!important}
+      .birthday-mobile-art{display:block!important;max-height:none!important;overflow:visible!important;width:100%!important;height:auto!important}
+      .birthday-hero{background-image:none!important;min-height:0!important}
+      .birthday-inner{height:auto!important}
+      .birthday-copy{display:block!important;width:100%!important;box-sizing:border-box!important;padding:13px 14px 14px!important}
+      .birthday-art-space{display:none!important;width:0!important;height:0!important;overflow:hidden!important}
       .event-title{font-size:20px!important;line-height:23px!important}
       .store-hours-panel{padding:14px 8px!important}
       .column-stack{display:block!important;width:100%!important;max-width:100%!important}
@@ -96,24 +98,43 @@
           </tr>
           <tr><td bgcolor="#C8F0DD" height="4" style="height:4px;font-size:1px;line-height:1px;background-color:#C8F0DD;border-bottom:2px solid #111111;">&nbsp;</td></tr>
 
-          <!-- Birthday: black-and-white headline, one action -->
+          <!-- Birthday packages: custom collectible-party art with live, readable HTML copy -->
           <tr>
             <td class="page-pad" style="padding:12px 14px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#111111" style="background-color:#111111;border:1px solid #111111;">
                 <tr>
-                  <td class="stack birthday-copy" valign="middle" style="padding:13px 16px;">
-                    <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:9px;line-height:12px;font-weight:900;letter-spacing:1.5px;color:#C8F0DD;">NOW BOOKING / BIRTHDAYS</div>
-                    <div style="margin-top:3px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:25px;font-weight:900;letter-spacing:-.6px;color:#ffffff;">WE DO BIRTHDAY PACKAGES.</div>
-                    <div style="margin-top:3px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:600;color:#cfd3d6;">Every kid gets a themed basket&mdash;Pok&eacute;mon, baseball and more&mdash;with 5 packs, toploaders, penny sleeves and free cards. The birthday kid gets their own specialized package.</div>
+                  <td class="birthday-mobile-art" style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+                    <img src="../images/birthday-packages-hero.jpg" width="612" height="180" alt="Sports cards, TCG packs and a birthday gift basket" style="width:100%;max-width:612px;height:auto;">
                   </td>
-                  <td class="stack birthday-cta" width="174" align="right" valign="middle" style="width:174px;padding:13px 16px;">
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right">
+                </tr>
+                <tr>
+                  <td class="birthday-hero" height="180" background="../images/birthday-packages-hero.jpg" bgcolor="#111111" style="height:180px;min-height:180px;background-color:#111111;background-image:url('../images/birthday-packages-hero.jpg');background-position:center center;background-size:cover;background-repeat:no-repeat;">
+                    <!--[if gte mso 9]>
+                    <v:rect fill="true" stroke="false" style="width:612px;height:180px;">
+                      <v:fill type="frame" src="../images/birthday-packages-hero.jpg" color="#111111" />
+                      <v:textbox inset="0,0,0,0">
+                    <![endif]-->
+                    <table class="birthday-inner" role="presentation" width="100%" height="180" cellpadding="0" cellspacing="0" border="0" style="width:100%;height:180px;">
                       <tr>
-                        <td align="center" bgcolor="#ffffff" style="background-color:#ffffff;border:1px solid #ffffff;mso-padding-alt:10px 13px;">
-                          <a href="mailto:ben.scheve@gmail.com?subject=Zen%20Bros%20Birthday%20Package" style="display:block;padding:10px 13px;mso-padding-alt:0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;line-height:13px;font-weight:900;color:#111111;white-space:nowrap;">EMAIL BEN &nbsp;<span style="color:#174B38;">&rarr;</span></a>
+                        <td class="birthday-copy" width="392" valign="middle" style="width:392px;padding:14px 16px;">
+                          <div style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:9px;line-height:12px;font-weight:900;letter-spacing:1.5px;color:#C8F0DD;">NOW BOOKING / BIRTHDAYS</div>
+                          <div style="margin-top:3px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:22px;line-height:25px;font-weight:900;letter-spacing:-.6px;color:#ffffff;text-shadow:0 1px 2px #000000;">WE DO BIRTHDAY PACKAGES.</div>
+                          <div style="margin-top:3px;max-width:360px;font-family:Inter,Arial,Helvetica,sans-serif;font-size:9px;line-height:13px;font-weight:700;color:#f3f5f4;text-shadow:0 1px 2px #000000;">Every kid gets a themed basket&mdash;Pok&eacute;mon, baseball and more&mdash;with 5 packs, toploaders, penny sleeves and free cards. The birthday kid gets their own specialized package.</div>
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:8px;">
+                            <tr>
+                              <td align="center" bgcolor="#ffffff" style="background-color:#ffffff;border:1px solid #ffffff;mso-padding-alt:8px 12px;">
+                                <a href="mailto:ben.scheve@gmail.com?subject=Zen%20Bros%20Birthday%20Package" style="display:block;padding:8px 12px;mso-padding-alt:0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:9px;line-height:12px;font-weight:900;color:#111111;white-space:nowrap;">EMAIL BEN &nbsp;<span style="color:#174B38;">&rarr;</span></a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
+                        <td class="birthday-art-space" width="220" style="width:220px;font-size:1px;line-height:1px;">&nbsp;</td>
                       </tr>
                     </table>
+                    <!--[if gte mso 9]>
+                      </v:textbox>
+                    </v:rect>
+                    <![endif]-->
                   </td>
                 </tr>
               </table>
