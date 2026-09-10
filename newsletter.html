@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zen Bros Breaks — Card Shop in Moraga, CA</title>
-  <meta name="description" content="Zen Bros Breaks is now open in Moraga, CA — 354 Park St, next to the Rheem Theatre. Sports cards, TCG, singles, sealed, supplies, and live breaks." />
+  <title>Newsletter Archive &mdash; Zen Bros Breaks</title>
+  <meta name="description" content="Every issue of the Zen Bros Breaks newsletter — shop news, upcoming breaks, recent hits and release dates." />
 
-  <meta property="og:title" content="Zen Bros Breaks — Now Open in Moraga" />
-  <meta property="og:description" content="Card shop at 354 Park St, next to the Rheem Theatre. Sports cards, TCG, and live breaks." />
+  <meta property="og:title" content="Zen Bros Breaks — Newsletter Archive" />
+  <meta property="og:description" content="Read every issue of the Zen Bros Breaks newsletter." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/og-image.png" />
-  <meta property="og:url" content="https://www.zenbrosbreaks.com" />
+  <meta property="og:url" content="https://www.zenbrosbreaks.com/breaks.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#14171c" />
 
-  <link rel="canonical" href="https://www.zenbrosbreaks.com" />
+  <link rel="canonical" href="https://www.zenbrosbreaks.com/breaks.html" />
   <link rel="icon" type="image/png" href="images/logo-sm.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,17 +26,6 @@
 <body>
 
 <a href="#main" class="skip">Skip to content</a>
-
-<!-- Hidden — lets Netlify Forms capture newsletter poll votes
-     submitted by /.netlify/functions/vote -->
-<form name="event-poll" data-netlify="true" hidden>
-  <input type="hidden" name="form-name" value="event-poll" />
-  <input name="poll_id" />
-  <input name="option_id" />
-  <input name="option" />
-  <input name="option_details" />
-  <input name="source" />
-</form>
 
 <!-- Live zen background — fixed behind the whole page -->
 <div class="zen-bg" aria-hidden="true">
@@ -75,10 +64,10 @@
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="breaks.html">Breaks</a>
       <a href="contact.html">Contact</a>
-      <a href="newsletter.html">Newsletter</a>
+      <a href="newsletter.html" class="active">Newsletter</a>
       <a href="https://www.whatnot.com/user/zenbrosbreaks" target="_blank" rel="noopener" class="nav-link-live">
         <span class="dot"></span> Live
       </a>
@@ -115,7 +104,7 @@
   </header>
 
   <nav class="drawer-nav" aria-label="Menu">
-    <a href="index.html" class="active">
+    <a href="index.html">
       <span class="drawer-label">Home</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
@@ -127,7 +116,7 @@
       <span class="drawer-label">Contact</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
-    <a href="newsletter.html">
+    <a href="newsletter.html" class="active">
       <span class="drawer-label">Newsletter</span>
       <span class="drawer-arrow" aria-hidden="true">&rarr;</span>
     </a>
@@ -170,83 +159,37 @@
 <div id="scrim" class="scrim" aria-hidden="true"></div>
 
 <!-- ============================================================
-     GRAND OPENING
-     ============================================================ -->
-<section class="go-hero">
-  <div class="go-inner">
-    <span class="pill"><span class="dot"></span> Now Open</span>
-    <h1 class="go-date">We&rsquo;re open!</h1>
-    <p class="go-where">354 Park St, Moraga, CA<span>Next to the Rheem Theatre</span></p>
-
-    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="go-join" id="nlForm">
-      <input type="hidden" name="form-name" value="newsletter" />
-      <p class="promo-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
-      <input type="email" name="email" id="nlEmail" required placeholder="you@email.com" aria-label="Email address" autocomplete="email" />
-      <button type="submit" class="btn" id="nlBtn">Join the list</button>
-    </form>
-    <p class="go-join-note" id="nlNote">New breaks, shop news, 10% off your first break.</p>
-    <p class="go-join-note" id="nlDone" hidden role="status" aria-live="polite">&check; You&rsquo;re in &mdash; check your inbox.</p>
-
-    <div class="go-cta-row">
-      <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">Get directions &rarr;</a>
-      <a class="btn-ghost" href="breaks.html">Shop live breaks &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     MAIN
+     MAIN — Breaks
      ============================================================ -->
 <main id="main" class="main">
 
-  <section class="panel" id="visit">
-    <p class="eyebrow">Where to find us</p>
-    <h2>354 Park St, Moraga.</h2>
-    <p class="panel-sub">Right next to the Rheem Theatre, in the Rheem Valley Shopping Center. Parking out front.</p>
-
-    <a class="place" href="https://www.google.com/maps/search/?api=1&query=354+Park+St+Moraga+CA+94556" target="_blank" rel="noopener">
-      <span class="place-pin" aria-hidden="true">
-        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-          <circle cx="12" cy="10" r="3"/>
-        </svg>
-      </span>
-      <span class="place-text">
-        <span class="place-label">Zen Bros Breaks</span>
-        <span class="place-addr">354 Park St, Moraga, CA 94556</span>
-        <span class="place-land">Next to the Rheem Theatre</span>
-      </span>
-      <span class="place-cta">Get directions &rarr;</span>
-    </a>
-
-    <div class="map">
-      <iframe
-        src="https://maps.google.com/maps?q=354%20Park%20St%2C%20Moraga%2C%20CA%2094556&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        title="Map to Zen Bros Breaks — 354 Park St, Moraga, CA"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+  <section class="page-hero">
+    <span class="pill"><span class="dot"></span> Sent from the shop</span>
+    <h1>The newsletter, every issue.</h1>
   </section>
 
   <section class="panel">
-    <p class="eyebrow">The shop</p>
-    <h2>Take a look inside.</h2>
-    <div class="gallery">
-      <figure class="tile tile--wide">
-        <img src="images/store-1.jpg" alt="The counter and card display case at Zen Bros Breaks" loading="lazy" />
-      </figure>
-      <figure class="tile">
-        <img src="images/store-2.jpg" alt="Memorabilia wall with jerseys and the NBA Champions banner" loading="lazy" />
-      </figure>
-      <figure class="tile">
-        <img src="images/store-3.jpg" alt="Pok&eacute;mon and Magic shelf" loading="lazy" />
-      </figure>
-      <figure class="tile">
-        <img src="images/store-4.jpg" alt="Customers in the shop on grand opening day" loading="lazy" />
-      </figure>
-      <figure class="tile">
-        <img src="images/store-5.jpg" alt="The storefront on Park St in Moraga" loading="lazy" />
-      </figure>
+    <p class="eyebrow">Archive</p>
+    <h2>Miss one? Read it here.</h2>
+    <p class="panel-sub">Shop news, upcoming breaks, recent hits and release dates &mdash; sent to the list every few weeks. Every issue stays up on this page.</p>
+    <a class="btn" href="index.html#joinForm">Join the list &rarr;</a>
+  </section>
+
+  <section class="panel">
+    <div class="cards4">
+
+      <article class="card">
+        <div class="card-body">
+          <span class="card-tag">Latest issue</span>
+          <h3>Trade Night, hits &amp; this week&rsquo;s breaks</h3>
+          <p class="card-date">September 2026</p>
+          <p class="card-desc">Halloween Trade Night on October 24, birthday packages, nine recent hits and fifteen upcoming shows.</p>
+          <div class="card-foot">
+            <a class="btn btn-ghost" href="email-templates/newsletter-email.html">Read issue &rarr;</a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
